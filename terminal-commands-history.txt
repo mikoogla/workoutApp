@@ -1,1 +1,4 @@
 npx create-react-app workout-app
+git checkout -b AT-37-test-branch
+git commit -m "AT-37"
+npm start
