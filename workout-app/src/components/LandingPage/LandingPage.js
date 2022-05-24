@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React from "react"
 
 const LandingPage = () => (
-  <div>
-    LandingPage Component - Pierwsza strona wyświetlana użytkownikowi po wejściu
-  </div>
-);
+	<div>
+		LandingPage Component - Pierwsza strona wyświetlana użytkownikowi po wejściu
+	</div>
+)
 
-LandingPage.propTypes = {};
+LandingPage.propTypes = {}
 
-LandingPage.defaultProps = {};
+LandingPage.defaultProps = {}
 
-export default LandingPage;
+export default LandingPage
