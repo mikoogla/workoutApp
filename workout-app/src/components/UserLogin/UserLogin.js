@@ -6,8 +6,4 @@ const UserLogin = () => (
 	</div>
 )
 
-UserLogin.propTypes = {}
-
-UserLogin.defaultProps = {}
-
 export default UserLogin

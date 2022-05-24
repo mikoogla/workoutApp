@@ -1,26 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
-import LandingPage from './components/LandingPage/LandingPage';
-import UserLogin from './components/UserLogin/UserLogin';
+import React from "react"
+import "./App.css"
+import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-let value = 1;
-
-function changeValue(){
-  value = 2*value;
-  console.log(value);
-  document.getElementById("a").textContent = value;
-  }
+import Dashboard from "./components/Dashboard/Dashboard"
+import LandingPage from "./components/LandingPage/LandingPage"
+import UserLogin from "./components/UserLogin/UserLogin"
 
 function App() {
-  return (
-    <div className="App"> 
-    <button id="a" onClick={changeValue}>Guzik</button>
-    <LandingPage />
-    <UserLogin/>
-    <Dashboard/>
-    </div>
-  );
+	return (
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route path='/' element={<Dashboard />} />
+				<Route path='/about' element={<LandingPage />} />
+				<Route path='/contact' element={<UserLogin />} />
+			</Routes>
+		</Router>
+	)
 }
 
-export default App;
+export default App

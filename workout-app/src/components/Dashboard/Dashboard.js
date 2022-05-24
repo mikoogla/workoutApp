@@ -6,8 +6,4 @@ const Dashboard = () => (
 	</div>
 )
 
-Dashboard.propTypes = {}
-
-Dashboard.defaultProps = {}
-
 export default Dashboard
