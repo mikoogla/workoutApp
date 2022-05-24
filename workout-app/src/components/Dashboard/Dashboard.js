@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React from "react"
 
 const Dashboard = () => (
-  <div>
-    Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
-  </div>
-);
+	<div>
+		Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
+	</div>
+)
 
-Dashboard.propTypes = {};
+Dashboard.propTypes = {}
 
-Dashboard.defaultProps = {};
+Dashboard.defaultProps = {}
 
-export default Dashboard;
+export default Dashboard
