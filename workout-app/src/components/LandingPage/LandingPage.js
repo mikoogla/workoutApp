@@ -1,8 +1,9 @@
 import React from "react"
+import Header from ".//header.js"
 
 const LandingPage = () => (
 	<div>
-		LandingPage Component - Pierwsza strona wyświetlana użytkownikowi po wejściu
+		<Header />
 	</div>
 )
 

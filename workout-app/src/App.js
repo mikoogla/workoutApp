@@ -1,23 +1,36 @@
-import React from "react"
-import "./App.css"
-import Navbar from "./components/Navbar"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Dashboard from "./components/Dashboard/Dashboard"
-import LandingPage from "./components/LandingPage/LandingPage"
-import UserLogin from "./components/UserLogin/UserLogin"
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard/Dashboard";
+import LandingPage from "./components/LandingPage/LandingPage";
+import UserLogin from "./components/UserLogin/UserLogin";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import RegistrationForm from './components/Sign-up/registrationForm'
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 function App() {
-	return (
-		<Router>
-			<Navbar />
-			<Routes>
-				<Route path='/' element={<Dashboard />} />
-				<Route path='/about' element={<LandingPage />} />
-				<Route path='/contact' element={<UserLogin />} />
-			</Routes>
-		</Router>
-	)
+  return (
+	<ThemeProvider theme={darkTheme}>
+    <Router>
+      <Navbar />
+      <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/landingpage" element={<LandingPage />} />
+          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/sign-up" element={<RegistrationForm />} />
+        
+      </Routes>
+    </Router>
+	</ThemeProvider>
+  );
 }
 
-export default App
+export default App;

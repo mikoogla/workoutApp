@@ -1,9 +1,14 @@
-import React from "react"
+import React from "react";
+import Button from "@mui/material/Button";
 
 const Dashboard = () => (
-	<div>
-		Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
-	</div>
-)
+  <div>
+    <div>
+      Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
+    </div>
 
-export default Dashboard
+    <Button variant="outlined">Kliknij tutaj</Button>
+  </div>
+);
+
+export default Dashboard;
