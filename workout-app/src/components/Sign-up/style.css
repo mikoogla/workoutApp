@@ -6,7 +6,8 @@
 } */
 body{
     background: #bdc3c7; 
-    background-image: linear-gradient(to top right, #0a2035, #bdc3c7); 
+    /* background-image: linear-gradient(to top right, #0a2035, #bdc3c7);  */
+    background-color: #272727;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white;

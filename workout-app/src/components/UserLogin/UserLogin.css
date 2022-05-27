@@ -15,7 +15,7 @@
   
   input[type="text"],
   input[type="password"] {
-    height: 25px;
+    height: 25px; 
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
   }
   
@@ -33,9 +33,15 @@
     background: #1b5183;
   }
   
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
   .button-container {
     display: flex;
-    justify-content: center;
   }
   
   .login-form {

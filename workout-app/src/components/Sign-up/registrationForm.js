@@ -54,8 +54,8 @@ function RegistrationForm() {
           <TextField
           className="form_input"
            
-            id="secondName"
-            label="Second name"
+            id="userName"
+            label="Username"
             variant="outlined"
             onChange={(e) => handleInputChange(e)}
           />
@@ -66,6 +66,7 @@ function RegistrationForm() {
           className="form_input"
             id="password"
             label="Password"
+            type="password"
             variant="outlined"
             onChange={(e) => handleInputChange(e)}
           />
@@ -76,6 +77,7 @@ function RegistrationForm() {
           className="form_input"
             id="rePassword"
             label="Re-password"
+            type="password"
             variant="outlined"
             onChange={(e) => handleInputChange(e)}
           />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import TextField from "@mui/material/TextField";
 import ".//UserLogin.css";
 
 function UserLogin() {
@@ -58,17 +58,31 @@ function UserLogin() {
     <div className="logform">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
+          <TextField
+          className="form_input"
+            id="firstName"
+            label="Login"
+            variant="outlined"
+          />
           {renderErrorMessage("uname")}
         </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
+		<div className="input-container">
+          <TextField
+          className="form_input"
+		  type="password"
+            id="firstName"
+            label="Password"
+            variant="outlined"
+          />
+          {renderErrorMessage("uname")}
         </div>
-        <div className="button-container">
-          <input type="submit" value="Login"/>
+        <div className="buttons-container">
+          <div className="button-container">
+            <input type="submit" value="Login"/>
+          </div>
+          <div className="button-container">
+            <input type="submit" value="Register"/>
+          </div>
         </div>
       </form>
     </div>
