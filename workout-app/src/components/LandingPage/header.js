@@ -11,15 +11,15 @@ const Header = () => {
         <div className="company-icons">
           <span className="company-icons__item">
             <i className="fab fa-apple" />
-            app store
+            App store
           </span>
           <span className="company-icons__item">
             <i className="fab fa-google-play" />
-            google play
+            Google Play
           </span>
           <span className="company-icons__item">
             <i className="fab fa-windows" />
-            windows
+            Windows
           </span>
         </div>
       </div>
@@ -84,12 +84,13 @@ const Header = () => {
           border-radius: 20px;
           color: var(--brand-color);
           border: 1.8px solid var(--brand-color);
-          background: white;
+          background: #333;
+          text-decoration: none;
           transition: all 0.5s;
         }
         .intro-button a:hover {
           background-color: var(--brand-color);
-          color: black;
+          color: #999;
         }
 
         .company-icons {

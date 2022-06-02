@@ -7,18 +7,18 @@ const divbar = () => {
   return (
     <>
         <AppBar position="static">
-		<div id="navbar">
+		<div id="navbar" className="navbar--main">
           <Stack spacing={3} direction="row">
-            <Button href="/landingpage" variant="text">
+            <Button className="navbar--link" href="/landingpage" variant="text">
               Landing Page
             </Button>
-            <Button href="/dashboard" color="secondary" variant="text">
+            <Button className="navbar--link" href="/dashboard" color="secondary" variant="text">
               Dashboard
             </Button>
-            <Button href="/userlogin" color="secondary" Button variant="text">
+            <Button className="navbar--link" href="/userlogin" color="secondary" Button variant="text">
               Login
             </Button>
-            <Button href="/sign-up" color="secondary" Button variant="text">
+            <Button className="navbar--link" href="/sign-up" color="secondary" Button variant="text">
               Signup
             </Button>
           </Stack>
