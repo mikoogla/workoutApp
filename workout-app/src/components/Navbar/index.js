@@ -21,6 +21,9 @@ const divbar = () => {
             <Button className="navbar--link" href="/sign-up" color="secondary" Button variant="text">
               Signup
             </Button>
+            <Button className="navbar--link" href="/course" color="secondary" Button variant="text">
+              Course (temproary)
+            </Button>
           </Stack>
 		  </div>
         </AppBar>
