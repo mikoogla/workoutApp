@@ -2,3 +2,10 @@ npx create-react-app workout-app
 git checkout -b AT-37-test-branch
 git commit -m "AT-37"
 npm start
+git config --get remote.origin.url
+git push --delete https://github.com/mikoogla9/workoutApp.git AT-37-test-branch
+
+//ustawienie domyślnej lokalizacji komponentów w generate-react-cli.json
+npx generate-react-cli component LandingPage
+npx generate-react-cli component Dashboard
+npx generate-react-cli component UserLogin
