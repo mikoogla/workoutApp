@@ -11,16 +11,16 @@ function Course() {
     { exName: 'Plank', exDate: new Date(2022, 5, 12), exData: '1min | 1min | 1min', exInfo: 'More info' },
     { exName: 'Pushups', exDate: new Date(2022, 6, 6), exData: '15 | 12 | 9 | 8', exInfo: 'More info' }
   ]
-  console.log(excercises[0].exData + "<------ex--------")
+  let exList = [];
+  for (let index = 0; index < excercises.length; index++) {
+    exList.push(<Exercise data={excercises[index]}></Exercise>)
+    
+  }
   return (
     <div >
       Course Component
       <UserInfo></UserInfo>
-      <Exercise data={excercises[0]}></Exercise>
-      <Exercise data={excercises[1]}></Exercise>
-      <Exercise data={excercises[2]}></Exercise>
-      <Exercise data={excercises[3]}></Exercise>
-      <Exercise data={excercises[4]}></Exercise>
+      {exList}
     </div>
   )
 }
