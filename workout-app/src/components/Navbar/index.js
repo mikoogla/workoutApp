@@ -6,8 +6,8 @@ import Stack from "@mui/material/Stack";
 const divbar = () => {
   return (
     <>
-        <AppBar position="static">
-		<div id="navbar" className="navbar--main">
+      <AppBar position="static">
+        <div id="navbar" className="navbar--main">
           <Stack spacing={3} direction="row">
             <Button className="navbar--link" href="/landingpage" variant="text">
               Landing Page
@@ -25,8 +25,8 @@ const divbar = () => {
               Course (temproary)
             </Button>
           </Stack>
-		  </div>
-        </AppBar>
+        </div>
+      </AppBar>
     </>
   );
 };

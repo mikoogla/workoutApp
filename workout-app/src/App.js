@@ -17,20 +17,21 @@ const darkTheme = createTheme({
 });
 
 function App() {
+
   return (
-	<ThemeProvider theme={darkTheme}>
-    <Router>
-      <Navbar />
-      <Routes>
+    <ThemeProvider theme={darkTheme}>
+      <Router>
+        <Navbar />
+        <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/userlogin" element={<UserLogin />} />
           <Route path="/sign-up" element={<RegistrationForm />} />
           <Route path="/course" element={<Course />} />
-      </Routes>
-    </Router>
-	</ThemeProvider>
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
