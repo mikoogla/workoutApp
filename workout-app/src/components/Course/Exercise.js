@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from "@mui/material/Button";
 import CalendarItem from './CalendarItem';
+import Card from './Card';
 
 function Exercise(props) {
 
     return (
-        <div className='excercise-item'>
+        <Card className='excercise-item'>
             <div className='excercise-left'>
                 <CalendarItem data={props.data} />
                 <div className='excercise-item__name'>{props.data.exName}</div>
@@ -14,7 +15,7 @@ function Exercise(props) {
                 <div className='excercise-item__data'>{props.data.exData}</div>
                 <Button variant="outlined">{props.data.exInfo}</Button>
             </div>
-        </div>
+        </Card>
     );
 }
 
