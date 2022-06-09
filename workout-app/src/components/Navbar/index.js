@@ -2,11 +2,12 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import './style.css';
 
 const divbar = () => {
   return (
-    <>
-      <AppBar position="static">
+    <div className="Navbar">
+      <AppBar position="static" overflow="hidden">
         <div id="navbar" className="navbar--main">
           <Stack spacing={3} direction="row">
             <Button className="navbar--link" href="/landingpage" variant="text">
@@ -27,7 +28,7 @@ const divbar = () => {
           </Stack>
         </div>
       </AppBar>
-    </>
+    </div>
   );
 };
 

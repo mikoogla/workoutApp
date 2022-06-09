@@ -14,10 +14,10 @@ function Course() {
   let exList = [];
   for (let index = 0; index < excercises.length; index++) {
     exList.push(<Exercise data={excercises[index]}></Exercise>)
-    
+
   }
   return (
-    <div >
+    <div className='Course-container'>
       Course Component
       <UserInfo></UserInfo>
       {exList}
