@@ -10,8 +10,10 @@ function Exercise(props) {
     const [name, setName] = useState(props.data.exName);
 
     const ClickHandler = () => {
-        console.log("Clicked*");
-        setName("changed");
+        if (name === "hidden")
+            setName(props.data.exName);
+        else
+            setName("hidden");
     }
     return (
         <Card className='excercise-item'>
