@@ -2,9 +2,9 @@ import React from "react";
 import Exercise from './Exercise';
 import './course.css'
 
-function ExcercisesList() {
+function ExercisesList() {
     const buttonContent = "Change";
-    const excercises = [
+    const exercises = [
         { exName: 'Pullups', exDate: new Date(2022, 6, 6), exData: '5 | 5 | 4 | 2', exInfo: buttonContent },
         { exName: 'Bench press', exDate: new Date(2022, 4, 23), exData: '40x10 | 40x8 | 40x6 | 40x5', exInfo: buttonContent },
         { exName: 'Barebells', exDate: new Date(2022, 5, 11), exData: '10x10 | 10x10 | 10x10 | 10x10', exInfo: buttonContent },
@@ -12,12 +12,12 @@ function ExcercisesList() {
         { exName: 'Pushups', exDate: new Date(2022, 6, 6), exData: '15 | 12 | 9 | 8', exInfo: buttonContent }
     ]
     let exList = [];
-    for (let index = 0; index < excercises.length; index++) {
-        exList.push(<Exercise data={excercises[index]}></Exercise>)
+    for (let index = 0; index < exercises.length; index++) {
+        exList.push(<Exercise data={exercises[index]}></Exercise>)
 
     }
     return (exList);
 
 }
 
-export default ExcercisesList;
+export default ExercisesList;

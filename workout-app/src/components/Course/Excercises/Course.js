@@ -1,18 +1,19 @@
-import React from 'react';
-import UserInfo from './UserInfo';
-import ExcercisesList from './ExcercisesList';
+import React from "react";
+import UserInfo from "./UserInfo";
+import ExercisesList from "./ExercisesList";
+import NewExercise from "../NewExercise/NewExercise";
 
-import './course.css'
+import "./course.css";
 
 function Course() {
-
   return (
-    <div className='Course-container'>
+    <div className="Course-container">
       Course Component
       <UserInfo></UserInfo>
-      <ExcercisesList/>
+      <NewExercise />
+      <ExercisesList />
     </div>
-  )
+  );
 }
 
 export default Course;

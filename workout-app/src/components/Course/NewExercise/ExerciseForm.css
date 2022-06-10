@@ -1,0 +1,12 @@
+.exercise-form {
+  display: flex;
+  justify-content: center;
+}
+
+.exercise-form-submit {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-block: 10px;
+}
