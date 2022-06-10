@@ -7,7 +7,7 @@ import Dashboard from "./components/Dashboard/Dashboard"
 import LandingPage from "./components/LandingPage/LandingPage"
 import UserLogin from "./components/UserLogin/UserLogin"
 import Course from "./components/Course/Course"
-import ExpenseItem from "./components/CourseM/ExpenseItem"
+import ToDoHeader from "./components/CourseM/ToDoHeader"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
 import RegistrationForm from "./components/Sign-up/registrationForm"
 
@@ -29,7 +29,7 @@ function App() {
 					<Route path='/userlogin' element={<UserLogin />} />
 					<Route path='/sign-up' element={<RegistrationForm />} />
 					<Route path='/course' element={<Course />} />
-					<Route path='/expanseitem' element={<ExpenseItem />} />
+					<Route path='/todoheader' element={<ToDoHeader />} />
 				</Routes>
 			</Router>
 		</ThemeProvider>
