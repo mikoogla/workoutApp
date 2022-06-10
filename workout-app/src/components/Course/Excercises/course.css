@@ -1,5 +1,8 @@
 .Course-container {
-    align-items: center;
+  display: block;
+  margin-inline: auto;
+  align-items: center;
+  overflow: hidden;
 }
 
 .excercise-item {
@@ -68,16 +71,29 @@
   border-radius: 12px;
 }
 
-/* @media (min-width: 580px) {
-  .excercise-item__name {
-    flex-direction: row;
+@media (max-width: 680px) {
+  .excercise-item {
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    flex: 1;
+    justify-content: center;
   }
-
-  .excercise-item__date {
-    font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
+  .excercise-left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-} */
+  .excercise-right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .excercise-item__data {
+    width: 100%;
+    margin: 4px;
+    padding: 1px;
+  }
+  Button,
+  CalendarItem {
+    width: 100%;
+  }
+}

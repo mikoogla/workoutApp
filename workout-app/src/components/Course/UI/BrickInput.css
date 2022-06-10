@@ -1,4 +1,6 @@
 .brick {
+  min-width: 200px;
+  overflow: hidden;
   align-items: center;
   display: inline-flex;
   justify-content: space-between;
@@ -19,4 +21,10 @@
 .brick-input {
   text-align: center;
   align-items: center;
+}
+
+@media (max-width: 235px) {
+  .brick {
+    min-width: 100px;
+  }
 }
