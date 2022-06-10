@@ -1,99 +1,98 @@
 .Course-container {
-  display: block;
-  margin-inline: auto;
-  align-items: center;
-  overflow: hidden;
+	display: block;
+	margin-inline: auto;
+	align-items: center;
+	overflow: hidden;
 }
 
 .excercise-item {
-  margin-inline: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 10px;
-  background-color: #333232;
-  overflow: hidden;
+	margin: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+	background-color: #333232;
+	overflow: hidden;
 }
 
 .excercise-left {
-  justify-content: flex-start;
-  display: flex;
-  align-items: center;
+	justify-content: flex-start;
+	display: flex;
+	align-items: center;
 }
 
 .excercise-right {
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
+	justify-content: flex-end;
+	display: flex;
+	align-items: center;
 }
 
 .excercise-item__name {
-  display: flex;
-  /* flex-direction: column; */
-  gap: 1rem;
-  flex-flow: column-reverse;
-  justify-content: flex-end;
-  flex: 1;
+	display: flex;
+	/* flex-direction: column; */
+	gap: 1rem;
+	flex-flow: column-reverse;
+	justify-content: flex-end;
+	flex: 1;
 }
 
 .excercise-item__moreinfo {
-  display: inline-block;
-  justify-content: flex-end;
-  margin-left: auto;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  background-color: #40005d;
-  border: 1px solid white;
-  padding: 0.5rem;
-  border-radius: 12px;
+	display: inline-block;
+	justify-content: flex-end;
+	margin-left: auto;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+	background-color: #40005d;
+	border: 1px solid white;
+	padding: 0.5rem;
+	border-radius: 12px;
 }
 
 .excercise-item__date {
-  justify-content: flex-start;
-  text-align: center;
-  border: 1px solid #90caf9;
-  border-radius: 12px;
+	justify-content: flex-start;
+	text-align: center;
+	border: 1px solid #90caf9;
+	border-radius: 12px;
 }
 
 .excercise-item__data {
-  margin-right: 1vw;
-  white-space: nowrap;
-  display: inline-block;
-  overflow: hidden !important;
-  text-overflow: ellipsis;
-  display: inline;
-  align-items: flex-start;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #90caf9;
-  border-radius: 12px;
+	margin-right: 1vw;
+	white-space: nowrap;
+	display: inline-block;
+	overflow: hidden !important;
+	text-overflow: ellipsis;
+	display: inline;
+	align-items: flex-start;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #90caf9;
+	border-radius: 12px;
 }
 
 @media (max-width: 680px) {
-  .excercise-item {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .excercise-left {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .excercise-right {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .excercise-item__data {
-    width: 100%;
-    margin: 4px;
-    padding: 1px;
-  }
-  Button,
-  CalendarItem {
-    width: 100%;
-  }
+	.excercise-item {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.excercise-left {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.excercise-right {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.excercise-item__data {
+		width: 100%;
+		margin: 4px;
+		padding: 1px;
+	}
+	Button,
+	CalendarItem {
+		width: 100%;
+	}
 }

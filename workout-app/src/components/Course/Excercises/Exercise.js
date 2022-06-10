@@ -23,7 +23,7 @@ function Exercise(props) {
             </div>
             <div className='excercise-right'>
                 <div className='excercise-item__data'>{props.data.exData}</div>
-                <Button onClick={ClickHandler} variant="outlined">{props.data.exInfo}</Button>
+                <Button onClick={ClickHandler} variant="outlined" className="change--button">{props.data.exInfo}</Button>
             </div>
         </Card>
     );
