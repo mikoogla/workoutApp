@@ -14,6 +14,8 @@ function BrickInput(props) {
           type={props.type}
           min={props.min}
           max={props.max}
+          onChange={props.onChange}
+          value={props.value}
           id="standard-basic"
           variant="standard"
         />
