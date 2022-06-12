@@ -10,6 +10,7 @@ function Course() {
     console.log("In Course.js: ");
     console.log(exercise);
   };
+
   return (
     <div className="Course-container">
       Course Component
