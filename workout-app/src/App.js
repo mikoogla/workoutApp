@@ -8,7 +8,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import UserLogin from "./components/UserLogin/UserLogin";
 import Course from "./components/Course/Excercises/Course";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import RegistrationForm from './components/Sign-up/registrationForm'
+import RegistrationForm from "./components/Sign-up/registrationForm";
 
 const darkTheme = createTheme({
   palette: {
@@ -17,13 +17,12 @@ const darkTheme = createTheme({
 });
 
 function App() {
-
   return (
     <ThemeProvider theme={darkTheme}>
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Course />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/userlogin" element={<UserLogin />} />
