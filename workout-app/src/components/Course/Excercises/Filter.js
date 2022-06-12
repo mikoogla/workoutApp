@@ -23,16 +23,14 @@ function Filter(props) {
     const {
       target: { value },
     } = event;
+    // setName(event.target.value);
     setName(value);
     props.onFilterChoice(value);
   };
 
-  const sprawdzanko = () => {
-    console.log(name);
-  };
   return (
     <div className="filter">
-      <button onClick={sprawdzanko}>Sprawdz</button>
+      <div>Wybrany filter: {name}</div>
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-name-label">Name</InputLabel>
         <Select

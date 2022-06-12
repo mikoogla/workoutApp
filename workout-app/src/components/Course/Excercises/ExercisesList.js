@@ -4,6 +4,7 @@ import Filter from "./Filter";
 import "./course.css";
 
 function ExercisesList() {
+  const [userFilter, setUserFilter] = React.useState("");
   const buttonContent = "Change";
   const exercises = [
     {
@@ -45,23 +46,16 @@ function ExercisesList() {
     exList.push(<Exercise data={exercises[index]}></Exercise>);
   }
 
-  let userFilter = "";
   const filterChoice = (filter) => {
     console.log("Tutaj są przekazane dane: " + filter);
-    userFilter = filter;
+    setUserFilter(filter);
   };
 
   return (
     <div>
       <Filter Names={exNames} onFilterChoice={filterChoice} />
       {exList}
-      <button
-        onClick={() => {
-          console.log("User filter: " + userFilter.toString());
-        }}
-      >
-        Sprawdz
-      </button>
+      <div>Wybrany filter: {userFilter}</div>
     </div>
   );
 }
