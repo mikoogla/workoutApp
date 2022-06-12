@@ -4,3 +4,7 @@
   justify-content: end;
   margin: 10px 20px;
 }
+
+#label {
+  background-color: #272727;
+}

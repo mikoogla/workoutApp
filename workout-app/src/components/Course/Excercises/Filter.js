@@ -32,7 +32,7 @@ function Filter(props) {
     <div className="filter">
       <div>Wybrany filter: {name}</div>
       <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-name-label">Name</InputLabel>
+        <InputLabel id="label">Filter</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
