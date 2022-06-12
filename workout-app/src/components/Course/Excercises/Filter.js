@@ -43,6 +43,7 @@ function Filter(props) {
           value={name}
           onChange={handleChange}
         >
+          <MenuItem value="">None</MenuItem>
           {filterList}
         </Select>
       </FormControl>
