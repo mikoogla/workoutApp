@@ -23,10 +23,8 @@ function Filter(props) {
     const {
       target: { value },
     } = event;
-    setName(
-      // On autofill we get a stringified value.
-      value.toString()
-    );
+    setName(value);
+    props.onFilterChoice(value);
   };
 
   const sprawdzanko = () => {

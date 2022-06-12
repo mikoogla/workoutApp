@@ -45,10 +45,23 @@ function ExercisesList() {
     exList.push(<Exercise data={exercises[index]}></Exercise>);
   }
 
+  let userFilter = "";
+  const filterChoice = (filter) => {
+    console.log("Tutaj są przekazane dane: " + filter);
+    userFilter = filter;
+  };
+
   return (
     <div>
-      <Filter Names={exNames} />
+      <Filter Names={exNames} onFilterChoice={filterChoice} />
       {exList}
+      <button
+        onClick={() => {
+          console.log("User filter: " + userFilter.toString());
+        }}
+      >
+        Sprawdz
+      </button>
     </div>
   );
 }
