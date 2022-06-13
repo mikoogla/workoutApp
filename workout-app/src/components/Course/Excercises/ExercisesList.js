@@ -39,22 +39,21 @@ function ExercisesList() {
     },
   ];
 
-  let exNames = exercises.map((a) => a.exName);
-
-  let exList = [];
-  for (let index = 0; index < exercises.length; index++) {
-    exList.push(<Exercise data={exercises[index]}></Exercise>);
-  }
-
   const filterChoice = (filter) => {
-    console.log("Tutaj są przekazane dane: " + filter);
     setUserFilter(filter);
   };
 
   return (
     <div>
-      <Filter Names={exNames} onFilterChoice={filterChoice} />
-      {exList}
+      <Filter 
+      Names={exercises.map((a) => a.exName)} 
+      onFilterChoice={filterChoice} 
+      />
+
+      {exercises.map(exercise => 
+        <Exercise data={exercise}/>
+        )}
+
       <div>Wybrany filter: {userFilter}</div>
     </div>
   );
