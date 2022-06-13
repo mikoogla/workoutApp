@@ -7,7 +7,7 @@ function ToDoList() {
 	return (
 		<div className='todolist'>
 			<ul>
-				<li data-id='test1'>
+				<li>
 					Wypić kawę
 					<div className='tools'>
 						<button className='complete'>
@@ -20,7 +20,7 @@ function ToDoList() {
 					</div>
 				</li>
 
-				<li data-id='test2'>
+				<li>
 					Zjeść śniadanie
 					<div className='tools'>
 						<button className='complete'>
@@ -33,7 +33,7 @@ function ToDoList() {
 					</div>
 				</li>
 
-				<li data-id='test3'>
+				<li>
 					Umyć okna
 					<div className='tools'>
 						<button className='complete'>
