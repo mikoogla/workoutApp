@@ -15,11 +15,16 @@ function ExercisesList(props) {
         onFilterChoice={filterChoice}
       />
 
-      {props.exDB.map((exercise) => {
-        return <Exercise key={exercise.exName} data={exercise} />;
-      })}
+      {props.exDB
+        .filter((exercise) => {
+          if (userFilter !== "") return exercise.exName === userFilter;
+          else return 1;
+        })
+        .map((exercise) => (
+          <Exercise key={exercise.exName} data={exercise} />
+        ))}
 
-      <div>Wybrany filter: {userFilter}</div>
+      {/* <div>Wybrany filter: {userFilter}</div> */}
     </div>
   );
 }
