@@ -6,7 +6,6 @@ function NewExercise(props) {
     const exercise = {
       ...enteredExerciseData,
     };
-    console.log("here---->" + exercise);
     props.onNewExercise(exercise);
   };
   return (

@@ -4,8 +4,6 @@ import CalendarItem from "./CalendarItem";
 import Card from "../UI/Card";
 
 function Exercise(props) {
-  console.log("tutaj jest samo ćwiczenie -> " + props.data.exName);
-
   return (
     <Card className="excercise-item">
       <div className="excercise-left">
