@@ -29,7 +29,7 @@ function ExerciseForm(props) {
       exDate: new Date(enteredDate),
       exInfo: "Made live",
     };
-    console.log(exercise);
+    console.log("form->>>" + exercise.enteredName);
 
     props.onExerciseDataChange(exercise);
     setEnteredData("");
