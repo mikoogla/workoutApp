@@ -8,23 +8,21 @@ function ExercisesList(props) {
   const filterChoice = (filter) => {
     setUserFilter(filter);
   };
+
+  const FilteredExercises = props.exDB
+    .filter((exercise) => {
+      if (userFilter !== "") return exercise.exName === userFilter;
+      else return 1;
+    })
+    .map((exercise) => <Exercise key={exercise.exName} data={exercise} />);
+
   return (
     <div>
       <Filter
         Names={props.exDB.map((exercise) => exercise.exName)}
         onFilterChoice={filterChoice}
       />
-
-      {props.exDB
-        .filter((exercise) => {
-          if (userFilter !== "") return exercise.exName === userFilter;
-          else return 1;
-        })
-        .map((exercise) => (
-          <Exercise key={exercise.exName} data={exercise} />
-        ))}
-
-      {/* <div>Wybrany filter: {userFilter}</div> */}
+      {FilteredExercises.length === 0 ? <p>No results</p> : FilteredExercises}
     </div>
   );
 }
