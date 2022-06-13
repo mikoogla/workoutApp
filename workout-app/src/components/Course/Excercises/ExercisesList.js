@@ -4,7 +4,6 @@ import Filter from "./Filter";
 import "./course.css";
 
 function ExercisesList(props) {
-  console.log("tutaj jest lista: " + props.exDB[0].exName);
   const [userFilter, setUserFilter] = React.useState("");
   const filterChoice = (filter) => {
     setUserFilter(filter);
@@ -17,8 +16,7 @@ function ExercisesList(props) {
       />
 
       {props.exDB.map((exercise) => {
-        console.log("mapping: " + exercise.exName);
-        return <Exercise data={exercise} />;
+        return <Exercise key={exercise.exName} data={exercise} />;
       })}
 
       <div>Wybrany filter: {userFilter}</div>
