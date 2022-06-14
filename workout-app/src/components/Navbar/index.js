@@ -45,6 +45,14 @@ const divbar = () => {
             >
               Course (temproary)
             </Button>
+            <Button
+              className="navbar--link"
+              href="/styling-course"
+              color="secondary"
+              variant="text"
+            >
+              Styling
+            </Button>
           </Stack>
         </div>
       </AppBar>

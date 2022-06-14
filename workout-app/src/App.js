@@ -9,6 +9,7 @@ import UserLogin from "./components/UserLogin/UserLogin";
 import Course from "./components/Course/Excercises/Course";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import RegistrationForm from "./components/Sign-up/registrationForm";
+import Styling from "./components/Styling/App";
 
 const darkTheme = createTheme({
   palette: {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/userlogin" element={<UserLogin />} />
           <Route path="/sign-up" element={<RegistrationForm />} />
           <Route path="/course" element={<Course />} />
+          <Route path="/styling-course" element={<Styling />} />
         </Routes>
       </Router>
     </ThemeProvider>
