@@ -7,6 +7,7 @@ function ExerciseForm(props) {
   const [enteredName, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredData, setEnteredData] = useState("");
+  const [expandForm, setExpandForm] = useState(false);
 
   const nameChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -51,8 +52,13 @@ function ExerciseForm(props) {
     setEnteredData("");
     setEnteredDate("");
     setEnteredTitle("");
+    handleExpand();
   };
-  return (
+
+  const handleExpand = () => {
+    !expandForm ? setExpandForm(true) : setExpandForm(false);
+  };
+  const exerciseForm = (
     <form>
       <div className="exercise-form">
         <BrickInput
@@ -84,6 +90,18 @@ function ExerciseForm(props) {
         </Button>
       </div>
     </form>
+  );
+
+  return (
+    <div className="exercise-form-submit">
+      {expandForm === true ? (
+        exerciseForm
+      ) : (
+        <Button variant="contained" color="success" onClick={handleExpand}>
+          Add Exercise
+        </Button>
+      )}
+    </div>
   );
 }
 
