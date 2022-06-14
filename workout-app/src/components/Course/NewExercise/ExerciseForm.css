@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   margin-block: 10px;
+  gap: 5px;
 }
 
 @media (max-width: 680px) {

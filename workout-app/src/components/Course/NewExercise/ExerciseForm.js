@@ -46,6 +46,12 @@ function ExerciseForm(props) {
     setEnteredDate("");
     setEnteredTitle("");
   };
+
+  const cancelHandler = () => {
+    setEnteredData("");
+    setEnteredDate("");
+    setEnteredTitle("");
+  };
   return (
     <form>
       <div className="exercise-form">
@@ -72,6 +78,9 @@ function ExerciseForm(props) {
       <div className="exercise-form-submit">
         <Button variant="contained" color="success" onClick={submitHandler}>
           Submit
+        </Button>
+        <Button variant="contained" color="error" onClick={cancelHandler}>
+          Cancel
         </Button>
       </div>
     </form>

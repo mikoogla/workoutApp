@@ -13,7 +13,11 @@ function ExercisesList(props) {
       if (userFilter !== "") return exercise.exName === userFilter;
       else return 1;
     })
-    .map((exercise) => <Exercise key={exercise.id} data={exercise} />);
+    .map((exercise) => (
+      <li>
+        <Exercise key={exercise.id} data={exercise} />
+      </li>
+    ));
 
   let exercisesList = <p>No results</p>;
   filteredExercises.length !== 0 && (exercisesList = filteredExercises);
