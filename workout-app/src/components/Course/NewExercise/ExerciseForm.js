@@ -23,7 +23,18 @@ function ExerciseForm(props) {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    let currentDate = new Date();
+
+    // ID based on date + time + random number
+    let date_id =
+      currentDate.getDay().toString() +
+      currentDate.getHours().toString() +
+      currentDate.getMinutes().toString() +
+      currentDate.getSeconds().toString() +
+      Math.floor(Math.random() * 101);
+
     const exercise = {
+      id: date_id,
       exName: enteredName,
       exData: enteredData,
       exDate: new Date(enteredDate),
