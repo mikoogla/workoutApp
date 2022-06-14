@@ -14,8 +14,8 @@ function ExercisesList(props) {
       else return 1;
     })
     .map((exercise) => (
-      <li>
-        <Exercise key={exercise.id} data={exercise} />
+      <li key={exercise.id}>
+        <Exercise data={exercise} />
       </li>
     ));
 

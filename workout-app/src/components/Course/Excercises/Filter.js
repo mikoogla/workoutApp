@@ -27,7 +27,6 @@ function Filter(props) {
     setName(value);
     props.onFilterChoice(value);
   };
-
   return (
     <div className="filter">
       <FormControl sx={{ m: 1, width: 300 }}>
