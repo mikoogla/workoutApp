@@ -8,13 +8,15 @@ function ExercisesList(props) {
   const filterChoice = (filter) => {
     setUserFilter(filter);
   };
-
-  const FilteredExercises = props.exDB
+  const filteredExercises = props.exDB
     .filter((exercise) => {
       if (userFilter !== "") return exercise.exName === userFilter;
       else return 1;
     })
     .map((exercise) => <Exercise key={exercise.exName} data={exercise} />);
+
+  let exercisesList = <p>No results</p>;
+  filteredExercises.length !== 0 && (exercisesList = filteredExercises);
 
   return (
     <div>
@@ -22,7 +24,7 @@ function ExercisesList(props) {
         Names={props.exDB.map((exercise) => exercise.exName)}
         onFilterChoice={filterChoice}
       />
-      {FilteredExercises.length === 0 ? <p>No results</p> : FilteredExercises}
+      {exercisesList}
     </div>
   );
 }
