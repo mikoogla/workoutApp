@@ -13,7 +13,7 @@ function Filter(props) {
   for (let index = 0; index < props.Names.length; index++) {
     let p = props.Names[index];
     filterList.push(
-      <MenuItem key={p} value={p}>
+      <MenuItem key={props.ID[index]} value={p}>
         {p}
       </MenuItem>
     );

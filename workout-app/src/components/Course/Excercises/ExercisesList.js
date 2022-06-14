@@ -21,6 +21,7 @@ function ExercisesList(props) {
   return (
     <div>
       <Filter
+        ID={props.exDB.map((exercise) => exercise.id)}
         Names={props.exDB.map((exercise) => exercise.exName)}
         onFilterChoice={filterChoice}
       />
