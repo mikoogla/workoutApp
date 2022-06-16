@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Course />} />
+          <Route path="/" element={<Styling />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/userlogin" element={<UserLogin />} />

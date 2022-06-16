@@ -43,7 +43,7 @@ const divbar = () => {
               color="secondary"
               variant="text"
             >
-              Course (temproary)
+              Ex. list
             </Button>
             <Button
               className="navbar--link"
