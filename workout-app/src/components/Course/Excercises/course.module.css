@@ -98,9 +98,7 @@ li {
     margin: 4px;
     padding: 1px;
   }
-  Button {
-    /* width: 100px; */
-  }
+
   CalendarItem {
     width: 100%;
   }

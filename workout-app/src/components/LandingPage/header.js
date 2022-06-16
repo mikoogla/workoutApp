@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const Header = () => {
   return (
     <header>
       <div className="intro-logo jumbo-bg">
+        <img
+          alt="ok"
+          src={require("../../assets/images/logo2.png")}
+          width={100}
+        />
         <h1>Welcome to the GYM</h1>
         <div className="intro-button">
           <a href="/userlogin">Get Started</a>
@@ -32,7 +37,7 @@ const Header = () => {
         .intro-logo {
           display: flex;
           position: absolute;
-          top: 5em;
+          top: 1em;
           bottom: 0;
           left: 0;
           right: 0;
@@ -45,7 +50,7 @@ const Header = () => {
         .intro-logo h1 {
           font-size: 1.8em;
           font-weight: 900;
-          font-family: 'Philosopher', sans-serif;
+          font-family: "Philosopher", sans-serif;
           color: var(--brand-color);
         }
         @media (min-width: 768px) {
@@ -106,7 +111,7 @@ const Header = () => {
         }
       `}</style>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
