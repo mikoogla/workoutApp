@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import CalendarItem from "./CalendarItem";
-import Card from "../UI/Card";
 import styles from "./exercise.module.css";
 
 function Exercise(props) {
