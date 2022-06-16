@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import ".//UserLogin.css";
+import styles from "./UserLogin.module.css";
 
 function UserLogin() {
   // React States
@@ -11,24 +11,24 @@ function UserLogin() {
   const database = [
     {
       username: "user1",
-      password: "pass1"
+      password: "pass1",
     },
     {
       username: "user2",
-      password: "pass2"
-    }
+      password: "pass2",
+    },
   ];
 
   const errors = {
     uname: "invalid username",
-    pass: "invalid password"
+    pass: "invalid password",
   };
 
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
 
-    const {uname, pass} = document.forms[0];
+    const { uname, pass } = document.forms[0];
 
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
@@ -55,45 +55,39 @@ function UserLogin() {
 
   // JSX code for login form
   const renderForm = (
-    <div className="logform">
+    <div className={styles.app}>
+      <div className={styles.title}>Sign In</div>
       <form onSubmit={handleSubmit}>
-        <div className="input-container">
+        <div className={styles.input__Container}>
           <TextField
-          className="form_input"
+            className="form_input"
             id="firstName"
             label="Login"
             variant="outlined"
           />
           {renderErrorMessage("uname")}
         </div>
-		<div className="input-container">
+        <div className={styles.input__Container}>
           <TextField
-          className="form_input"
-		  type="password"
+            className="form_input"
+            type="password"
             id="firstName"
             label="Password"
             variant="outlined"
           />
           {renderErrorMessage("uname")}
         </div>
-        <div className="buttons-container">
-          <div className="button-container">
-            <input type="submit" value="Login"/>
-          </div>
-          <div className="button-container">
-            <input type="submit" value="Register"/>
-          </div>
+        <div className={`${styles["buttons-container"]}`}>
+          <input type="submit" value="Login" />
+          <input type="submit" value="Register" />
         </div>
       </form>
     </div>
   );
 
   return (
-    <div className="app">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-      </div>
+    <div>
+      {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
     </div>
   );
 }

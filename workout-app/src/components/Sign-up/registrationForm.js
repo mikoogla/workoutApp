@@ -1,7 +1,8 @@
-import React, { useState, setState } from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import ".//style.css";
+import styles from "./registrationFormStyle.module.css";
+
 function RegistrationForm() {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
@@ -33,16 +34,17 @@ function RegistrationForm() {
   };
 
   return (
-    <div class="main">
-      <div className="form">
+    <div>
+      <div className={styles.form}>
         <nav class="bg-dark navbar-dark navbar">
           <div className="row col-12 d-flex justify-content-center text-white">
-            <h3>REGISTRATION</h3>
+            <div className={styles.title}>Registration</div>
           </div>
         </nav>
         <div className="form-body">
           <TextField
-            className="form_input"
+            style={{ margin: "5px 0 5px" }}
+            className={styles.form__input}
             id="firstName"
             label="First name"
             variant="outlined"
@@ -52,7 +54,8 @@ function RegistrationForm() {
           <div class="break"></div>
 
           <TextField
-            className="form_input"
+            style={{ margin: "5px 0 5px" }}
+            className={styles.form__input}
             id="userName"
             label="Username"
             variant="outlined"
@@ -62,7 +65,8 @@ function RegistrationForm() {
           <div class="break"></div>
 
           <TextField
-            className="form_input"
+            style={{ margin: "5px 0 5px" }}
+            className={styles.form__input}
             id="password"
             label="Password"
             type="password"
@@ -73,7 +77,8 @@ function RegistrationForm() {
           <div class="break"></div>
 
           <TextField
-            className="form_input"
+            style={{ margin: "5px 0 5px" }}
+            className={styles.form__input}
             id="rePassword"
             label="Re-password"
             type="password"
@@ -83,18 +88,14 @@ function RegistrationForm() {
         </div>
       </div>
 
-      <div class="footer">
+      <div className={styles.footer}>
         <Button
-          className="submitting"
           variant="contained"
           color="success"
           onClick={() => handleSubmit()}
         >
           Register
         </Button>
-        {/* <button onClick={() => handleSubmit()} type="submit" class="btn">
-          Register
-        </button> */}
       </div>
     </div>
   );

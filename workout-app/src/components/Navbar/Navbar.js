@@ -2,11 +2,11 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import "./style.css";
+import styles from "./NavbarStyle.module.css";
 
-const divbar = () => {
+const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className={styles.Navbar}>
       <AppBar position="static" overflow="hidden">
         <div id="navbar" className="navbar--main">
           <Stack spacing={3} direction="row">
@@ -60,4 +60,4 @@ const divbar = () => {
   );
 };
 
-export default divbar;
+export default Navbar;
