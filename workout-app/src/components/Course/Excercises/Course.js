@@ -52,8 +52,6 @@ function Course() {
     });
   };
   const addExerciseHandler = (exercise) => {
-    console.log("In Course.js: ");
-    console.log(exercise);
     addExercise(exercise);
   };
 

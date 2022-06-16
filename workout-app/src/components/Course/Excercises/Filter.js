@@ -29,8 +29,8 @@ function Filter(props) {
         >
           <MenuItem value="">None</MenuItem>
 
-          {props.Names.map((name) => (
-            <MenuItem key={name} value={name}>
+          {props.Names.filter((x, i, a) => a.indexOf(x) === i).map((name) => (
+            <MenuItem key={Math.random()} value={name}>
               {name}
             </MenuItem>
           ))}

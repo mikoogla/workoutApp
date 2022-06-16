@@ -42,7 +42,7 @@ function RegistrationForm() {
         </nav>
         <div className="form-body">
           <TextField
-          className="form_input"
+            className="form_input"
             id="firstName"
             label="First name"
             variant="outlined"
@@ -52,8 +52,7 @@ function RegistrationForm() {
           <div class="break"></div>
 
           <TextField
-          className="form_input"
-           
+            className="form_input"
             id="userName"
             label="Username"
             variant="outlined"
@@ -62,8 +61,8 @@ function RegistrationForm() {
 
           <div class="break"></div>
 
-          <TextField 
-          className="form_input"
+          <TextField
+            className="form_input"
             id="password"
             label="Password"
             type="password"
@@ -74,7 +73,7 @@ function RegistrationForm() {
           <div class="break"></div>
 
           <TextField
-          className="form_input"
+            className="form_input"
             id="rePassword"
             label="Re-password"
             type="password"
