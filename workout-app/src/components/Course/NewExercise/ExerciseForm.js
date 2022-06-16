@@ -7,9 +7,11 @@ function ExerciseForm(props) {
   const [enteredName, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredData, setEnteredData] = useState("");
+  const [validation, setValidation] = useState(true);
   const [expandForm, setExpandForm] = useState(false);
 
   const nameChangeHandler = (event) => {
+    setValidation(true);
     setEnteredTitle(event.target.value);
   };
 
@@ -24,7 +26,12 @@ function ExerciseForm(props) {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    let currentDate = new Date();
+    if (enteredName.trim().length === 0) {
+      setValidation(false);
+      return;
+    }
+
+    const currentDate = new Date();
 
     // ID based on date + time + random number
     let date_id =
@@ -38,7 +45,10 @@ function ExerciseForm(props) {
       id: date_id,
       exName: enteredName,
       exData: enteredData,
-      exDate: new Date(enteredDate),
+      exDate:
+        enteredDate.length === 0
+          ? new Date(currentDate)
+          : new Date(enteredDate),
       exInfo: "Made live",
     };
 
@@ -56,6 +66,7 @@ function ExerciseForm(props) {
   };
 
   const handleExpand = () => {
+    setValidation(true);
     !expandForm ? setExpandForm(true) : setExpandForm(false);
   };
   const exerciseForm = (
@@ -66,6 +77,7 @@ function ExerciseForm(props) {
           type="text"
           onChange={nameChangeHandler}
           value={enteredName}
+          style={{ backgroundColor: `${!validation ? "#3e1616" : "inherit"}` }}
         />
         <BrickInput
           title="Date"
@@ -81,6 +93,9 @@ function ExerciseForm(props) {
           value={enteredData}
         />
       </div>
+      {validation === false && (
+        <p style={{ color: "red" }}>Name can't be empty</p>
+      )}
       <div className="exercise-form-submit">
         <Button variant="contained" color="success" onClick={submitHandler}>
           Submit

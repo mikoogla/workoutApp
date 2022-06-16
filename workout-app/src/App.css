@@ -1,0 +1,10 @@
+body {
+  background-color: #272727;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+.SiteContent {
+  margin: 38px 0 0 0;
+}

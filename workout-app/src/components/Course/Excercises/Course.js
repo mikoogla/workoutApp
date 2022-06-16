@@ -3,7 +3,7 @@ import UserInfo from "./UserInfo";
 import ExercisesList from "./ExercisesList";
 import NewExercise from "../NewExercise/NewExercise";
 
-import "./course.css";
+import styles from "./course.module.css";
 const buttonContent = "Change";
 const exercisesDB = [
   {
@@ -42,6 +42,7 @@ const exercisesDB = [
     exInfo: buttonContent,
   },
 ];
+
 function Course() {
   const [exercises, setExercises] = React.useState(exercisesDB);
 
@@ -51,13 +52,11 @@ function Course() {
     });
   };
   const addExerciseHandler = (exercise) => {
-    console.log("In Course.js: ");
-    console.log(exercise);
     addExercise(exercise);
   };
 
   return (
-    <div className="Course-container">
+    <div className={styles.Course_container}>
       Course Component
       <UserInfo></UserInfo>
       <NewExercise onNewExercise={addExerciseHandler} />

@@ -9,16 +9,6 @@ import "./Filter.css";
 function Filter(props) {
   const [name, setName] = React.useState("");
 
-  let filterList = [];
-  for (let index = 0; index < props.Names.length; index++) {
-    let p = props.Names[index];
-    filterList.push(
-      <MenuItem key={props.ID[index]} value={p}>
-        {p}
-      </MenuItem>
-    );
-  }
-
   const handleChange = (event) => {
     const {
       target: { value },
@@ -28,7 +18,7 @@ function Filter(props) {
     props.onFilterChoice(value);
   };
   return (
-    <div className="filter">
+    <div className="filter--style">
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="label">Filter</InputLabel>
         <Select
@@ -38,7 +28,12 @@ function Filter(props) {
           onChange={handleChange}
         >
           <MenuItem value="">None</MenuItem>
-          {filterList}
+
+          {props.Names.filter((x, i, a) => a.indexOf(x) === i).map((name) => (
+            <MenuItem key={Math.random()} value={name}>
+              {name}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </div>
