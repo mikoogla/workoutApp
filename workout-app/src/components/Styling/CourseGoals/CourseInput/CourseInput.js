@@ -1,37 +1,9 @@
 // import { Label } from "@mui/icons-material";
 // import { clear } from "@testing-library/user-event/dist/clear";
 import React, { useState } from "react";
-import styled from "styled-components";
+import styles from "./CourseInput.module.css";
 
 import Button from "../../UI/Button/Button";
-
-const FormControl = styled.div`
-  margin: 0.5rem 0;
-
-  & label {
-    color: ${(props) => (props.invalid ? "red" : "inherit")};
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  & input {
-    background: ${(props) => (props.invalid ? "#332323" : "inherit")};
-    color: white;
-    display: block;
-    width: 100%;
-    border: 1px solid ${(props) => (props.invalid ? "red" : "#ccc")};
-    font: inherit;
-    line-height: 1.5rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  & input:focus {
-    outline: none;
-    background: #353535;
-    border-color: #8b005d;
-  }
-`;
 
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -61,14 +33,16 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <FormControl invalid={!isValid}>
+      <div
+        className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
+      >
         <label>{LabelText}</label>
         <input
           type="text"
           value={enteredValue}
           onChange={goalInputChangeHandler}
         />
-      </FormControl>
+      </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
