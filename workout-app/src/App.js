@@ -22,15 +22,17 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Styling />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/landingpage" element={<LandingPage />} />
-          <Route path="/userlogin" element={<UserLogin />} />
-          <Route path="/sign-up" element={<RegistrationForm />} />
-          <Route path="/course" element={<Course />} />
-          <Route path="/styling-course" element={<Styling />} />
-        </Routes>
+        <div className="SiteContent">
+          <Routes>
+            <Route path="/" element={<Styling />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/landingpage" element={<LandingPage />} />
+            <Route path="/userlogin" element={<UserLogin />} />
+            <Route path="/sign-up" element={<RegistrationForm />} />
+            <Route path="/course" element={<Course />} />
+            <Route path="/styling-course" element={<Styling />} />
+          </Routes>
+        </div>
       </Router>
     </ThemeProvider>
   );

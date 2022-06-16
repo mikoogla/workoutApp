@@ -3,7 +3,7 @@ import UserInfo from "./UserInfo";
 import ExercisesList from "./ExercisesList";
 import NewExercise from "../NewExercise/NewExercise";
 
-import "./course.css";
+import styles from "./course.module.css";
 const buttonContent = "Change";
 const exercisesDB = [
   {
@@ -56,7 +56,7 @@ function Course() {
   };
 
   return (
-    <div className="Course-container">
+    <div className={styles.Course_container}>
       Course Component
       <UserInfo></UserInfo>
       <NewExercise onNewExercise={addExerciseHandler} />

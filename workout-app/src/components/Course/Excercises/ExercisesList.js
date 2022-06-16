@@ -1,7 +1,7 @@
 import React from "react";
 import Exercise from "./Exercise";
 import Filter from "./Filter";
-import "./course.css";
+import styles from "./course.module.css";
 
 function ExercisesList(props) {
   const [userFilter, setUserFilter] = React.useState("");
