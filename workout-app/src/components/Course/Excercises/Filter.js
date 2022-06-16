@@ -18,7 +18,7 @@ function Filter(props) {
     props.onFilterChoice(value);
   };
   return (
-    <div className="filter">
+    <div className="filter--style">
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="label">Filter</InputLabel>
         <Select

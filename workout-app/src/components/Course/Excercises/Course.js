@@ -42,6 +42,7 @@ const exercisesDB = [
     exInfo: buttonContent,
   },
 ];
+
 function Course() {
   const [exercises, setExercises] = React.useState(exercisesDB);
 

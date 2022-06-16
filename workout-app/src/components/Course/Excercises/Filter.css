@@ -1,10 +1,9 @@
-.filter {
+.filter--style {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   margin: 10px 20px;
 }
-
 #label {
   background-color: #272727;
 }
