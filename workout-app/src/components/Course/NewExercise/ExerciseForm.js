@@ -7,9 +7,11 @@ function ExerciseForm(props) {
   const [enteredName, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredData, setEnteredData] = useState("");
+  const [validation, setValidation] = useState(true);
   const [expandForm, setExpandForm] = useState(false);
 
   const nameChangeHandler = (event) => {
+    setValidation(true);
     setEnteredTitle(event.target.value);
   };
 
@@ -25,6 +27,7 @@ function ExerciseForm(props) {
     event.preventDefault();
 
     if (enteredName.trim().length === 0) {
+      setValidation(false);
       return;
     }
 
@@ -63,6 +66,7 @@ function ExerciseForm(props) {
   };
 
   const handleExpand = () => {
+    setValidation(true);
     !expandForm ? setExpandForm(true) : setExpandForm(false);
   };
   const exerciseForm = (
@@ -73,6 +77,7 @@ function ExerciseForm(props) {
           type="text"
           onChange={nameChangeHandler}
           value={enteredName}
+          style={{ backgroundColor: `${!validation ? "#3e1616" : "inherit"}` }}
         />
         <BrickInput
           title="Date"
@@ -88,6 +93,9 @@ function ExerciseForm(props) {
           value={enteredData}
         />
       </div>
+      {validation === false && (
+        <p style={{ color: "red" }}>Name can't be empty</p>
+      )}
       <div className="exercise-form-submit">
         <Button variant="contained" color="success" onClick={submitHandler}>
           Submit

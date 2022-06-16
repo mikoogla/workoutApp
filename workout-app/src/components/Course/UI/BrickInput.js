@@ -18,6 +18,7 @@ function BrickInput(props) {
           value={props.value}
           id="standard-basic"
           variant="standard"
+          style={props.style}
         />
       </div>
     </div>
