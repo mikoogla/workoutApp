@@ -2,11 +2,11 @@ import React from "react";
 import Button from "@mui/material/Button";
 import CalendarItem from "./CalendarItem";
 import Card from "../UI/Card";
-import styles from "./course.module.css";
+import styles from "./exercise.module.css";
 
 function Exercise(props) {
   return (
-    <Card className={styles.exercise_item}>
+    <div className={styles.exercise_item}>
       <div className={styles.exercise_left}>
         <CalendarItem data={props.data} />
         <div className={styles.excercise_item__name}>
@@ -17,9 +17,18 @@ function Exercise(props) {
         <div className={styles.excercise_item__data}>
           {props.data.exData === "" ? "null" : props.data.exData}
         </div>
-        <Button variant="outlined">{props.data.exInfo}</Button>
+        <Button
+          style={{
+            color: "white",
+            outlineColor: "white",
+            borderColor: "white",
+          }}
+          variant="outlined"
+        >
+          {props.data.exInfo}
+        </Button>
       </div>
-    </Card>
+    </div>
   );
 }
 

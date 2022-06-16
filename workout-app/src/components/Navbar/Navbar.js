@@ -1,5 +1,4 @@
 import React from "react";
-import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import styles from "./NavbarStyle.module.css";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,7 +7,6 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 
 function Navbar() {
-  const ITEM_HEIGHT = 48;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -50,6 +48,7 @@ function Navbar() {
       <div className={styles.Navbar}>
         <div className={styles.Navbar__left}>
           <Button
+            key={Math.random()}
             className={styles.navbar_link}
             href="/landingpage"
             variant="text"
@@ -57,6 +56,7 @@ function Navbar() {
             Landing Page
           </Button>
           <Button
+            key={Math.random()}
             className={styles.navbar_link}
             href="/dashboard"
             color="secondary"
@@ -65,6 +65,7 @@ function Navbar() {
             Dashboard
           </Button>
           <Button
+            key={Math.random()}
             className={styles.navbar_link}
             href="/course"
             color="secondary"
@@ -73,6 +74,7 @@ function Navbar() {
             Ex. list
           </Button>
           <Button
+            key={Math.random()}
             className={styles.navbar_link}
             href="/styling-course"
             color="secondary"
@@ -83,6 +85,7 @@ function Navbar() {
         </div>
         <div className={styles.Navbar__right}>
           <Button
+            key={Math.random()}
             className={styles.button}
             href="/userlogin"
             color="secondary"
@@ -91,6 +94,7 @@ function Navbar() {
             Login
           </Button>
           <Button
+            key={Math.random()}
             className={styles.button}
             href="/sign-up"
             color="secondary"
@@ -141,8 +145,8 @@ function Navbar() {
 
   return (
     <div className={styles.Meta_Navbar}>
-      <div>{NavbarShort}</div>
-      <div>{NavbarLong}</div>
+      <div key={Math.random()}>{NavbarShort}</div>
+      <div key={Math.random()}>{NavbarLong}</div>
     </div>
   );
 }

@@ -12,11 +12,14 @@ li {
 .excercise_item {
   margin: 10px 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background-color: #333232;
+  background-color: #c48f8f;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
 }
 
 .excercise_left {
