@@ -1,31 +1,40 @@
-.Course-container {
-    align-items: center;
+.Course_container {
+  display: block;
+  margin-inline: auto;
+  align-items: center;
+  overflow: hidden;
 }
-
-.excercise-item {
-  margin-inline: 5px;
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.excercise_item {
+  margin: 10px 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  margin-bottom: 10px;
-  background-color: #333232;
+  background-color: #c48f8f;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
 }
 
-.excercise-left {
+.excercise_left {
   justify-content: flex-start;
   display: flex;
   align-items: center;
 }
 
-.excercise-right {
+.excercise_right {
   justify-content: flex-end;
   display: flex;
   align-items: center;
 }
 
-.excercise-item__name {
+.excercise_item__name {
   display: flex;
   /* flex-direction: column; */
   gap: 1rem;
@@ -34,7 +43,7 @@
   flex: 1;
 }
 
-.excercise-item__moreinfo {
+.excercise_item__moreinfo {
   display: inline-block;
   justify-content: flex-end;
   margin-left: auto;
@@ -47,14 +56,14 @@
   border-radius: 12px;
 }
 
-.excercise-item__date {
+.excercise_item__date {
   justify-content: flex-start;
   text-align: center;
   border: 1px solid #90caf9;
   border-radius: 12px;
 }
 
-.excercise-item__data {
+.excercise_item__data {
   margin-right: 1vw;
   white-space: nowrap;
   display: inline-block;
@@ -68,16 +77,29 @@
   border-radius: 12px;
 }
 
-/* @media (min-width: 580px) {
-  .excercise-item__name {
-    flex-direction: row;
+@media (max-width: 680px) {
+  .excercise_item {
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    flex: 1;
+    justify-content: center;
+  }
+  .excercise_left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .excercise_right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .excercise_item__data {
+    width: 100%;
+    margin: 4px;
+    padding: 1px;
   }
 
-  .excercise-item__date {
-    font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
+  CalendarItem {
+    width: 100%;
   }
-} */
+}

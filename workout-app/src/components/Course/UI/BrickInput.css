@@ -1,0 +1,30 @@
+.brick {
+	min-width: 200px;
+	overflow: hidden;
+	align-items: center;
+	display: inline-flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin: 10px 5px 10px 5px;
+	border: 1px solid #ececec;
+	background-color: #2a2a2a;
+	border-radius: 10px;
+	padding: 0.5rem;
+}
+
+.brick-label {
+	align-items: center;
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.brick-input {
+	text-align: center;
+	align-items: center;
+}
+
+@media (max-width: 235px) {
+	.brick {
+		min-width: 100px;
+	}
+}

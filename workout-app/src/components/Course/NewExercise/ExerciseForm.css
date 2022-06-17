@@ -1,0 +1,24 @@
+.exercise-form {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.exercise-form-submit {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-block: 10px;
+  gap: 5px;
+}
+
+@media (max-width: 680px) {
+  .exercise-form {
+    flex-direction: column;
+    /* justify-content: center; */
+    overflow: hidden;
+  }
+  form {
+    overflow: hidden;
+  }
+}

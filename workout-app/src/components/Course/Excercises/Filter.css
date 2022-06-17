@@ -1,0 +1,15 @@
+.filter--style {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px 20px;
+}
+#label {
+  background-color: #272727;
+}
+@media (max-width: 730px) {
+  .filter--style {
+    margin: 10px 20px 10px 20px;
+    justify-content: center;
+  }
+}
