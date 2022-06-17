@@ -1,13 +1,28 @@
+import { ImportantDevicesRounded } from "@mui/icons-material";
 import React from "react";
-import Button from "@mui/material/Button";
+import Card from "../UI/Card/Card";
+import styles from "./Dashboard.module.css";
+import Button from "../UI/Button/Button";
+
+const lightCardStyle = { backgroundColor: "#1b1b1b" };
+const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => (
   <div>
-    <div>
+    <Card>
       Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
-    </div>
-
-    <Button variant="outlined">Kliknij tutaj</Button>
+    </Card>
+    <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
+      Karta
+      <Card style={columnCardStyle}>
+        Podkarta 1 sample text
+        <Button>SAMPLE TEXT</Button>
+      </Card>
+      <Card style={lightCardStyle}>Podkarta 2</Card>
+      <Card style={lightCardStyle}>Podkarta 3</Card>
+      <Button>CLICK ME</Button>
+    </Card>
+    <Card>Sample text</Card>
   </div>
 );
 
