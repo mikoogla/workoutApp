@@ -16,10 +16,23 @@
   background-color: #121212 !important;
 }
 
+/* .options {
+  top: 16px;
+  right: 16px !important;
+  display: flex;
+  justify-content: end;
+  height: 200px;
+} */
+
 .navbar_link {
   background-color: #121212 !important;
 }
-
+a {
+  all: unset;
+}
+a:hover {
+  filter: invert(20%);
+}
 .Navbar__left {
   justify-content: flex-start;
   align-self: flex-start;
@@ -27,6 +40,17 @@
 @media (max-width: 700px) {
   .Navbar {
     visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  .Meta_Navbar {
+    display: flex !important;
+    justify-content: end;
+  }
+  .Navbar_short {
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
 }
 
@@ -43,6 +67,8 @@
 
 @media (min-width: 700px) {
   .Navbar_short {
+    display: flex;
+    justify-content: end;
     visibility: hidden;
     width: 0px;
   }

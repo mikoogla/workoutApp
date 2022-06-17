@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <div className="intro-logo jumbo-bg">
+      <div className="intro-logo" style={{ marginTop: "30px" }}>
         <img
           alt="ok"
           src={require("../../assets/images/logo2.png")}
