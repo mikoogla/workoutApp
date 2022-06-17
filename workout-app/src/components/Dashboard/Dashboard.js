@@ -1,14 +1,99 @@
-import { ImportantDevicesRounded } from "@mui/icons-material";
 import React from "react";
 import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 import Button from "../UI/Button/Button";
 
+const exerciseTemplates = [
+  {
+    id: Math.random,
+    name: "Treadmill",
+    dataTypes: [
+      ["time", "min"],
+      ["distance", "km"],
+    ],
+  },
+  { id: Math.random, name: "Pullups", dataTypes: [["reps", ""]] },
+  {
+    id: Math.random,
+    name: "Bench press",
+    dataTypes: [
+      ["weight", "kg"],
+      ["reps", ""],
+    ],
+  },
+  {
+    id: Math.random,
+    name: "Barebells",
+    dataTypes: [
+      ["weight", "kg"],
+      ["reps", ""],
+    ],
+  },
+  { id: Math.random, name: "Plank", dataTypes: [["time", "min"]] },
+];
+
+const workoutTemplates = [
+  {
+    id: Math.random,
+    type: "Trening 1",
+    exercises: [
+      exerciseTemplates[0],
+      exerciseTemplates[3],
+      exerciseTemplates[4],
+    ],
+  },
+  {
+    id: Math.random,
+    type: "Trening 2",
+    exercises: [
+      exerciseTemplates[1],
+      exerciseTemplates[2],
+      exerciseTemplates[3],
+      exerciseTemplates[4],
+      exerciseTemplates[0],
+      exerciseTemplates[1],
+    ],
+  },
+];
+
+const archiveTemplate = [
+  {
+    id: Math.random,
+    name: "My workout 1",
+    date: new Date(2022, 7, 7),
+    notes: "my note about workout",
+    exercises: [
+      {
+        type: exerciseTemplates[2],
+        units: exerciseTemplates[2].dataTypes,
+        series: [
+          [
+            [40, 10],
+            [40, 7],
+            [40, 7],
+            [40, 6],
+          ],
+        ],
+      },
+      {
+        type: exerciseTemplates[1],
+        units: exerciseTemplates[1].dataTypes,
+        series: [[[10], [9], [8], [7]]],
+      },
+      {
+        type: exerciseTemplates[4],
+        units: exerciseTemplates[4].dataTypes,
+        series: [[[1], [1], [1]]],
+      },
+    ],
+  },
+];
+
 const lightCardStyle = { backgroundColor: "#1b1b1b" };
 const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => (
-  <div>
+  <div className={styles.Dashboard}>
     <Card>
       Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
     </Card>
