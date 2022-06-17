@@ -1,16 +1,26 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import styles from "./NavbarStyle.module.css";
-import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Menu from "@mui/material/Menu";
+import Card from "../UI/Card/Card";
+
+import styles from "./NavbarStyle.module.css";
 
 function Navbar() {
   const [hideMenu, setHideMenu] = React.useState(true);
-
-  const expandMenu = () => {
-    hideMenu ? setHideMenu(false) : setHideMenu(true);
+  const node = React.useRef();
+  const handleClick = (e) => {
+    if (node.current.contains(e.target)) {
+      if (!hideMenu) setHideMenu(true);
+      else setHideMenu(false);
+      return;
+    } else {
+      !hideMenu && closeMenu();
+    }
+  };
+  const closeMenu = () => {
+    setHideMenu(true);
+    document.removeEventListener("click", handleClick);
   };
   const options = [
     {
@@ -105,26 +115,38 @@ function Navbar() {
 
   const NavbarShort = (
     <div className={styles.Navbar_short}>
-      <IconButton
-        aria-label="more"
-        id="long-button"
-        aria-haspopup="true"
-        onClick={expandMenu}
-      >
-        <MoreVertIcon />
-      </IconButton>
+      <div ref={node}>
+        {document.addEventListener("click", handleClick)}
+        <IconButton aria-label="more" id="long-button" aria-haspopup="true">
+          <MoreVertIcon />
+        </IconButton>
+      </div>
       <div
         style={{
+          overflow: "hidden",
+          position: "absolute",
+          zIndex: "2",
+          top: "16px",
           visibility: hideMenu && "hidden",
           height: hideMenu && "0px",
           width: hideMenu && "0px",
+          left: hideMenu && "0px",
         }}
       >
-        {options.map((option) => (
-          <a style={styles.menu_item} href={option.href}>
-            <MenuItem key={Math.random()}>{option.name}</MenuItem>
-          </a>
-        ))}
+        <Card style={{ flexDirection: "column", margin: "30px 20px" }}>
+          {options.map((option) => (
+            <a href={option.href} className={styles.menu_item}>
+              <div key={Math.random()}>{option.name}</div>
+            </a>
+          ))}
+          <div
+            style={{ color: "#990033" }}
+            className={styles.menu_item}
+            onClick={closeMenu}
+          >
+            <div key={Math.random()}>close</div>
+          </div>
+        </Card>
       </div>
     </div>
   );
