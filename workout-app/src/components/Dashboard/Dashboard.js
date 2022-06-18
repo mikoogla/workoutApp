@@ -8,7 +8,7 @@ import NewTypeComponent from "./NewData/NewTypeComponent";
 import { exerciseTemplates, workoutTemplates, archiveTemplate } from "./DB";
 import styles from "./Dashboard.module.css";
 
-const lightCardStyle = { backgroundColor: "#1b1b1b" };
+const lightCardStyle = { backgroundColor: "var(--background_medium)" };
 const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => {
