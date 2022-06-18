@@ -10,6 +10,14 @@ function Navbar() {
   const [hideMenu, setHideMenu] = React.useState(true);
   const node = React.useRef();
   const handleClick = (e) => {
+    if (node === null) {
+      document.removeEventListener("click", handleClick);
+      return;
+    }
+    if (node === undefined) {
+      document.removeEventListener("click", handleClick);
+      return;
+    }
     if (node.current.contains(e.target)) {
       if (!hideMenu) setHideMenu(true);
       else setHideMenu(false);

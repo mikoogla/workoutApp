@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 import Button from "../UI/Button/Button";
 import AddIcon from "@mui/icons-material/Add";
-import Add from "@mui/icons-material/Add";
-import { ButtonBase } from "@mui/material";
+import Input from "../UI/Input/Input";
+import Select from "../UI/Select/Select";
 
 const exerciseTemplates = [
   {
@@ -95,47 +95,88 @@ const archiveTemplate = [
 const lightCardStyle = { backgroundColor: "#1b1b1b" };
 const columnCardStyle = { flexDirection: "column" };
 
-const Dashboard = () => (
-  <div className={styles.Dashboard}>
-    <Card>Hi, User! Start your training now:</Card>
-    <Card style={{ ...columnCardStyle }}>
-      <Card className={styles.CreatorPanel}>
-        <Button className={styles.CreatorButtons}>
-          <AddIcon />
-          New workout
-        </Button>
-        <Button className={styles.CreatorButtons}>
-          <AddIcon />
-          New plan
-        </Button>
-        <Button className={styles.CreatorButtons}>
-          <AddIcon />
-          New exercise type
-        </Button>
+const Dashboard = () => {
+  const [NewWorkout, setNewWorkout] = useState(false);
+  const [NewPlan, setNewPlan] = useState(false);
+  const [NewType, setNewType] = useState(false);
+
+  const hideComponentStyle = (state) =>
+    !state && {
+      margin: "0px",
+      padding: "0px",
+      visibility: "hidden",
+      width: "0px",
+      height: "0px",
+    };
+
+  return (
+    <div className={styles.Dashboard}>
+      <Card>Hi, User! Start your training now:</Card>
+      <Card style={{ ...columnCardStyle }}>
+        <Card className={styles.CreatorPanel}>
+          <Button
+            onClick={() => {
+              NewWorkout ? setNewWorkout(false) : setNewWorkout(true);
+            }}
+            className={styles.CreatorButtons}
+          >
+            <AddIcon />
+            New workout
+          </Button>
+          <Button
+            onClick={() => {
+              NewPlan ? setNewPlan(false) : setNewPlan(true);
+            }}
+            className={styles.CreatorButtons}
+          >
+            <AddIcon />
+            New plan
+          </Button>
+          <Button
+            onClick={() => {
+              NewType ? setNewType(false) : setNewType(true);
+            }}
+            className={styles.CreatorButtons}
+          >
+            <AddIcon />
+            New exercise type
+          </Button>
+        </Card>
+        <Card
+          className={styles.CreatorPanel}
+          style={{ ...hideComponentStyle(NewWorkout), ...lightCardStyle }}
+        >
+          New workout window
+          <Input label="workout name" />
+          <Select list={workoutTemplates.map((ex) => ex.type)}></Select>
+          <Button>SUBMIT</Button>
+        </Card>
+        <Card
+          className={styles.CreatorPanel}
+          style={{ ...hideComponentStyle(NewPlan), ...lightCardStyle }}
+        >
+          New plan window
+          <Button>SUBMIT</Button>
+        </Card>
+        <Card
+          className={styles.CreatorPanel}
+          style={{ ...hideComponentStyle(NewType), ...lightCardStyle }}
+        >
+          New exercise window
+          <Button>SUBMIT</Button>
+        </Card>
       </Card>
-      <Card className={styles.CreatorPanel} style={lightCardStyle}>
-        New workout window
-        <Button>SUBMIT</Button>
+      <Card style={{ ...columnCardStyle }}>
+        <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
+          New exercise card
+        </Card>
+        <Card style={lightCardStyle}>Podkarta 2</Card>
+        <Card style={lightCardStyle}>Podkarta 3</Card>
+        <Button>CLICK ME</Button>
       </Card>
-      <Card className={styles.CreatorPanel} style={lightCardStyle}>
-        New plan window
-        <Button>SUBMIT</Button>
-      </Card>
-      <Card className={styles.CreatorPanel} style={lightCardStyle}>
-        New exercise window
-        <Button>SUBMIT</Button>
-      </Card>
-    </Card>
-    <Card style={{ ...columnCardStyle }}>
-      <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
-        New exercise card
-      </Card>
-      <Card style={lightCardStyle}>Podkarta 2</Card>
-      <Card style={lightCardStyle}>Podkarta 3</Card>
-      <Button>CLICK ME</Button>
-    </Card>
-    <Card>Sample text</Card>
-  </div>
-);
+      <Card>Sample text</Card>
+    </div>
+  );
+};
 
 export default Dashboard;
