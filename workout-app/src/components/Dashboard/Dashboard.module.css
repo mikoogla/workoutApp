@@ -11,9 +11,8 @@
     overflow: hidden;
   }
   .CreatorButtons {
-    display: flex;
-    width: 30vw;
-    justify-content: flex-start;
-    gap: 10px;
+    width: 30vw !important;
+    justify-content: space-around;
+    gap: 10px !important;
   }
 }

@@ -142,29 +142,26 @@ const Dashboard = () => {
             New exercise type
           </Button>
         </Card>
-        <Card
-          className={styles.CreatorPanel}
-          style={{ ...hideComponentStyle(NewWorkout), ...lightCardStyle }}
-        >
-          New workout window
-          <Input label="workout name" />
-          <Select list={workoutTemplates.map((ex) => ex.type)}></Select>
-          <Button>SUBMIT</Button>
-        </Card>
-        <Card
-          className={styles.CreatorPanel}
-          style={{ ...hideComponentStyle(NewPlan), ...lightCardStyle }}
-        >
-          New plan window
-          <Button>SUBMIT</Button>
-        </Card>
-        <Card
-          className={styles.CreatorPanel}
-          style={{ ...hideComponentStyle(NewType), ...lightCardStyle }}
-        >
-          New exercise window
-          <Button>SUBMIT</Button>
-        </Card>
+        {NewWorkout && (
+          <Card className={styles.CreatorPanel} style={lightCardStyle}>
+            New workout window
+            <Input label="workout name" />
+            <Select list={workoutTemplates.map((ex) => ex.type)}></Select>
+            <Button>SUBMIT</Button>
+          </Card>
+        )}
+        {NewPlan && (
+          <Card className={styles.CreatorPanel} style={lightCardStyle}>
+            New plan window
+            <Button>SUBMIT</Button>
+          </Card>
+        )}
+        {NewType && (
+          <Card className={styles.CreatorPanel} style={lightCardStyle}>
+            New exercise window
+            <Button>SUBMIT</Button>
+          </Card>
+        )}
       </Card>
       <Card style={{ ...columnCardStyle }}>
         <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
