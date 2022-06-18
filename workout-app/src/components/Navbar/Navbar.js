@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Card from "../UI/Card/Card";
-
+import { options } from "./NavbarData";
 import styles from "./NavbarStyle.module.css";
 
 function Navbar() {
@@ -30,32 +30,6 @@ function Navbar() {
     setHideMenu(true);
     document.removeEventListener("click", handleClick);
   };
-  const options = [
-    {
-      name: "Landing Page",
-      href: "/landingpage",
-    },
-    {
-      name: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      name: "Ex. List",
-      href: "/course",
-    },
-    {
-      name: "Styling",
-      href: "/styling-course",
-    },
-    {
-      name: "Login",
-      href: "/userlogin",
-    },
-    {
-      name: "Sign Up",
-      href: "/sign-up",
-    },
-  ];
 
   const NavbarLong = (
     <div>
@@ -64,57 +38,58 @@ function Navbar() {
           <Button
             key={Math.random()}
             className={styles.navbar_link}
-            href="/landingpage"
+            href={options[0].href}
+            color="success"
             variant="text"
           >
-            Landing Page
+            {options[0].name}
           </Button>
           <Button
             key={Math.random()}
             className={styles.navbar_link}
-            href="/dashboard"
-            color="secondary"
+            href={options[1].href}
+            color="success"
             variant="text"
           >
-            Dashboard
+            {options[1].name}
           </Button>
           <Button
             key={Math.random()}
             className={styles.navbar_link}
-            href="/course"
-            color="secondary"
+            href={options[2].href}
+            color="success"
             variant="text"
           >
-            Ex. list
+            {options[2].name}
           </Button>
           <Button
             key={Math.random()}
             className={styles.navbar_link}
-            href="/styling-course"
-            color="secondary"
+            href={options[3].href}
+            color="success"
             variant="text"
           >
-            Styling
+            {options[3].name}
           </Button>
         </div>
         <div className={styles.Navbar__right}>
           <Button
             key={Math.random()}
             className={styles.button}
-            href="/userlogin"
-            color="secondary"
+            href={options[4].href}
+            color="warning"
             variant="contained"
           >
-            Login
+            {options[4].name}
           </Button>
           <Button
             key={Math.random()}
             className={styles.button}
-            href="/sign-up"
-            color="secondary"
+            href={options[5].href}
+            color="warning"
             variant="outlined"
           >
-            Signup
+            {options[5].name}
           </Button>
         </div>
       </div>
@@ -143,8 +118,12 @@ function Navbar() {
       >
         <Card style={{ flexDirection: "column", margin: "30px 20px" }}>
           {options.map((option) => (
-            <a href={option.href} className={styles.menu_item}>
-              <div key={Math.random()}>{option.name}</div>
+            <a
+              key={Math.random()}
+              href={option.href}
+              className={styles.menu_item}
+            >
+              <div>{option.name}</div>
             </a>
           ))}
           <div
