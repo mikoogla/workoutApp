@@ -9,6 +9,7 @@ import { exerciseTemplates, workoutTemplates, archiveTemplate } from "./DB";
 import styles from "./Dashboard.module.css";
 
 const lightCardStyle = { backgroundColor: "var(--background_medium)" };
+const accentCardStyle = { backgroundColor: "var(--accent_main)" };
 const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => {
@@ -73,7 +74,7 @@ const Dashboard = () => {
       {archiveTemplate.map((workout) => (
         <Card key={Math.random()}>
           {workout.name}
-          <Card style={lightCardStyle}>
+          <Card style={accentCardStyle}>
             {workout.date.toLocaleString("en-US", { day: "numeric" }) +
               "/" +
               (workout.date.getUTCMonth() === 0
