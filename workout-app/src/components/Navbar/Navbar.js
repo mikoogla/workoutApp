@@ -127,7 +127,7 @@ function Navbar() {
             </a>
           ))}
           <div
-            style={{ color: "#990033" }}
+            style={{ color: "var(--closing_color)" }}
             className={styles.menu_item}
             onClick={closeMenu}
           >

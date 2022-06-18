@@ -1,5 +1,5 @@
 body {
-  background-color: #272727;
+  background-color: var(--background_light);
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;

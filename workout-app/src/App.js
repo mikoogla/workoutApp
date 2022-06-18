@@ -10,6 +10,7 @@ import Course from "./components/Course/Excercises/Course";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import RegistrationForm from "./components/Sign-up/registrationForm";
 import Styling from "./components/Styling/App";
+import Colors from "./GlobalStyles/colors.css";
 
 const darkTheme = createTheme({
   palette: {

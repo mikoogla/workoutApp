@@ -1,7 +1,7 @@
 .Meta_Navbar {
   display: flex !important;
   flex-direction: row !important;
-  background-color: #121212 !important;
+  background-color: var(--background_dark) !important;
 }
 
 .menu_item {
@@ -26,11 +26,11 @@
   flex-direction: row !important;
   align-items: center !important;
   overflow: hidden;
-  background-color: #121212 !important;
+  background-color: var(--background_dark) !important;
 }
 
 .navbar_link {
-  background-color: #121212 !important;
+  background-color: var(--background_dark) !important;
 }
 a {
   all: unset;
