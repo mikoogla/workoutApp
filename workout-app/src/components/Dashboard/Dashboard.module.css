@@ -12,7 +12,6 @@
   }
   .CreatorButtons {
     width: 30vw !important;
-    justify-content: space-around;
     gap: 10px !important;
   }
 }
