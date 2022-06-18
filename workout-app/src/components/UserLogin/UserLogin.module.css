@@ -21,14 +21,14 @@ input[type="submit"] {
   margin-top: 10px;
   cursor: pointer;
   font-size: 15px;
-  background: #113557;
-  border: 1px solid #1a538b;
-  color: #fff;
+  background: var(--accent_blue_1);
+  border: 1px solid var(--accent_blue_2);
+  color: var(--font_color);
   padding: 10px 20px;
 }
 
 input[type="submit"]:hover {
-  background: #1b5183;
+  background: var(--accent_blue_2);
 }
 
 .buttons-container {

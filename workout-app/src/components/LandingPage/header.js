@@ -87,15 +87,13 @@ const Header = () => {
         .intro-button a {
           padding: 0.65em 2.6em;
           border-radius: 20px;
-          color: var(--brand-color);
+          color: var(--font_color);
           border: 1.8px solid var(--brand-color);
-          background: #333;
+          background: var(--background_dark);
           text-decoration: none;
           transition: all 0.5s;
         }
         .intro-button a:hover {
-          background-color: var(--brand-color);
-          color: #999;
         }
 
         .company-icons {
@@ -106,7 +104,6 @@ const Header = () => {
           transition: all 0.5s;
         }
         .company-icons__item:hover {
-          color: var(--brand-color);
           cursor: pointer;
         }
       `}</style>
