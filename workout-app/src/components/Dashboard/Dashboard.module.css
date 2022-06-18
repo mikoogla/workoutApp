@@ -1,2 +1,22 @@
 .Dashboard {
 }
+
+.CreatorPanel {
+  width: 90%;
+  gap: 0px 15px;
+  justify-content: space-between;
+}
+@media (max-width: 780px) {
+  .CreatorPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0px;
+    overflow: hidden;
+  }
+  .CreatorButtons {
+    display: flex;
+    width: 30vw;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}

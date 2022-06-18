@@ -1,5 +1,6 @@
 .Button {
   all: unset;
+  display: flex;
   outline: 1px;
   padding: 8px 18px;
   outline-color: white;
@@ -7,6 +8,8 @@
   border-radius: 5px;
   background-color: inherit;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  align-items: center;
+  overflow: hidden;
 }
 
 @media (hover: hover) {

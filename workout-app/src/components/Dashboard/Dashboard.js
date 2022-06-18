@@ -2,6 +2,9 @@ import React from "react";
 import Card from "../UI/Card/Card";
 import styles from "./Dashboard.module.css";
 import Button from "../UI/Button/Button";
+import AddIcon from "@mui/icons-material/Add";
+import Add from "@mui/icons-material/Add";
+import { ButtonBase } from "@mui/material";
 
 const exerciseTemplates = [
   {
@@ -94,14 +97,38 @@ const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => (
   <div className={styles.Dashboard}>
-    <Card>
-      Dashboard Component - tutaj po zalogowaniu wyświetla się główna aplikacja
+    <Card>Hi, User! Start your training now:</Card>
+    <Card style={{ ...columnCardStyle }}>
+      <Card className={styles.CreatorPanel}>
+        <Button className={styles.CreatorButtons}>
+          <AddIcon />
+          New workout
+        </Button>
+        <Button className={styles.CreatorButtons}>
+          <AddIcon />
+          New plan
+        </Button>
+        <Button className={styles.CreatorButtons}>
+          <AddIcon />
+          New exercise type
+        </Button>
+      </Card>
+      <Card className={styles.CreatorPanel} style={lightCardStyle}>
+        New workout window
+        <Button>SUBMIT</Button>
+      </Card>
+      <Card className={styles.CreatorPanel} style={lightCardStyle}>
+        New plan window
+        <Button>SUBMIT</Button>
+      </Card>
+      <Card className={styles.CreatorPanel} style={lightCardStyle}>
+        New exercise window
+        <Button>SUBMIT</Button>
+      </Card>
     </Card>
-    <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
-      Karta
-      <Card style={columnCardStyle}>
-        Podkarta 1 sample text
-        <Button>SAMPLE TEXT</Button>
+    <Card style={{ ...columnCardStyle }}>
+      <Card style={{ ...lightCardStyle, ...columnCardStyle }}>
+        New exercise card
       </Card>
       <Card style={lightCardStyle}>Podkarta 2</Card>
       <Card style={lightCardStyle}>Podkarta 3</Card>
