@@ -90,6 +90,36 @@ const archiveTemplate = [
       },
     ],
   },
+  {
+    id: Math.random,
+    name: "Some other workout",
+    date: new Date(2021, 11, 12),
+    notes: "my note about workout",
+    exercises: [
+      {
+        type: exerciseTemplates[2],
+        units: exerciseTemplates[2].dataTypes,
+        series: [
+          [
+            [40, 10],
+            [40, 7],
+            [40, 7],
+            [40, 6],
+          ],
+        ],
+      },
+      {
+        type: exerciseTemplates[1],
+        units: exerciseTemplates[1].dataTypes,
+        series: [[[10], [9], [8], [7]]],
+      },
+      {
+        type: exerciseTemplates[4],
+        units: exerciseTemplates[4].dataTypes,
+        series: [[[1], [1], [1]]],
+      },
+    ],
+  },
 ];
 
 const lightCardStyle = { backgroundColor: "#1b1b1b" };
@@ -99,16 +129,6 @@ const Dashboard = () => {
   const [NewWorkout, setNewWorkout] = useState(false);
   const [NewPlan, setNewPlan] = useState(false);
   const [NewType, setNewType] = useState(false);
-
-  const hideComponentStyle = (state) =>
-    !state && {
-      margin: "0px",
-      padding: "0px",
-      visibility: "hidden",
-      width: "0px",
-      height: "0px",
-    };
-
   return (
     <div className={styles.Dashboard}>
       <Card>Hi, User! Start your training now:</Card>
@@ -147,7 +167,7 @@ const Dashboard = () => {
             New workout window
             <Input label="workout name" />
             <Select list={workoutTemplates.map((ex) => ex.type)}></Select>
-            <Button>SUBMIT</Button>
+            <Button>ADD</Button>
           </Card>
         )}
         {NewPlan && (
@@ -171,7 +191,21 @@ const Dashboard = () => {
         <Card style={lightCardStyle}>Podkarta 3</Card>
         <Button>CLICK ME</Button>
       </Card>
-      <Card>Sample text</Card>
+
+      {archiveTemplate.map((workout) => (
+        <Card key={Math.random}>
+          {workout.name}
+          <Card style={lightCardStyle}>
+            {workout.date.toLocaleString("en-US", { day: "numeric" }) +
+              "/" +
+              (workout.date.getUTCMonth() === 0
+                ? 12
+                : workout.date.getUTCMonth()) +
+              "/" +
+              workout.date.getFullYear()}
+          </Card>
+        </Card>
+      ))}
     </div>
   );
 };
