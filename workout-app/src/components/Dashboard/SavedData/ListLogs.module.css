@@ -1,0 +1,53 @@
+.workout {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.MainElement {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.details {
+  width: 90%;
+  justify-content: center;
+  background-color: var(--background_light);
+}
+.date {
+  margin: 0px;
+  background-color: var(--accent_main);
+}
+.exercise {
+  overflow: hidden;
+  width: 90%;
+  background-color: var(--background_light);
+}
+.Allseries {
+  flex-direction: column;
+}
+.series {
+  box-shadow: none;
+}
+.singleData {
+  background-color: var(--accent_main);
+  flex-direction: row;
+  margin: 5px 10px;
+}
+.singleUnit {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px;
+}
+@media (max-width: 780px) {
+  .series {
+    flex-direction: column;
+  }
+  .exercise {
+    flex-direction: column;
+  }
+  .singleData {
+    width: 25vw;
+    justify-content: center;
+  }
+}

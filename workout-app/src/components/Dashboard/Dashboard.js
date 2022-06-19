@@ -5,11 +5,17 @@ import AddIcon from "@mui/icons-material/Add";
 import NewWorkoutComponent from "./NewData/NewWorkoutComponent";
 import NewPlanComponent from "./NewData/NewPlanComponent";
 import NewTypeComponent from "./NewData/NewTypeComponent";
-import { exerciseTemplates, workoutTemplates, archiveTemplate } from "./DB";
+import ListLogs from "./SavedData/ListLogs";
+
+import {
+  exerciseTemplates,
+  workoutTemplates,
+  archiveTemplate,
+} from "./SavedData/DB";
 import styles from "./Dashboard.module.css";
 
 const lightCardStyle = { backgroundColor: "var(--background_medium)" };
-const accentCardStyle = { backgroundColor: "var(--accent_main)" };
+
 const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => {
@@ -70,21 +76,7 @@ const Dashboard = () => {
           />
         )}
       </Card>
-
-      {archiveTemplate.map((workout) => (
-        <Card key={Math.random()}>
-          {workout.name}
-          <Card style={accentCardStyle}>
-            {workout.date.toLocaleString("en-US", { day: "numeric" }) +
-              "/" +
-              (workout.date.getUTCMonth() === 0
-                ? 12
-                : workout.date.getUTCMonth()) +
-              "/" +
-              workout.date.getFullYear()}
-          </Card>
-        </Card>
-      ))}
+      {<ListLogs data={archiveTemplate} />}
     </div>
   );
 };

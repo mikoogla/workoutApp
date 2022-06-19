@@ -1,6 +1,7 @@
 .CreatorPanel {
   width: 90%;
   gap: 0px 15px;
+  box-shadow: none;
   justify-content: space-between;
 }
 @media (max-width: 780px) {

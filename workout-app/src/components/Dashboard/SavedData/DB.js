@@ -63,9 +63,9 @@ const archiveTemplate = [
         units: exerciseTemplates[2].dataTypes,
         series: [
           [
-            [40, 10],
+            [42.5, 10],
             [40, 7],
-            [40, 7],
+            [40, 8],
             [40, 6],
           ],
         ],
@@ -93,22 +93,28 @@ const archiveTemplate = [
         units: exerciseTemplates[2].dataTypes,
         series: [
           [
-            [40, 10],
-            [40, 7],
-            [40, 7],
+            [45, 6],
+            [42.5, 7],
+            [41, 7],
             [40, 6],
+          ],
+          [
+            [49, 10],
+            [40, 6],
+            [40, 5],
+            [40, 7],
           ],
         ],
       },
       {
         type: exerciseTemplates[1],
         units: exerciseTemplates[1].dataTypes,
-        series: [[[10], [9], [8], [7]]],
+        series: [[[10], [7], [8], [7]]],
       },
       {
         type: exerciseTemplates[4],
         units: exerciseTemplates[4].dataTypes,
-        series: [[[1], [1], [1]]],
+        series: [[[1.5], [1], [1]]],
       },
     ],
   },
