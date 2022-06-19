@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: var(--background_dark);
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  background-color: var(--background_light);
+}
+.userlogin {
+  margin: 0 5px 0 0;
+}
+.menuitems {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0 10px;
+}

@@ -2,11 +2,11 @@ import React from "react";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Card from "../UI/Card/Card";
+import Card from "../../UI/Card/Card";
 import { options } from "./NavbarData";
 import styles from "./NavbarStyle.module.css";
 
-function Navbar() {
+function Navbar(props) {
   const [hideMenu, setHideMenu] = React.useState(true);
   const node = React.useRef();
   const handleClick = (e) => {
@@ -139,10 +139,13 @@ function Navbar() {
   );
 
   return (
-    <div className={styles.Meta_Navbar}>
-      <div key={Math.random()}>{NavbarShort}</div>
-      <div key={Math.random()}>{NavbarLong}</div>
-    </div>
+    <>
+      <div>{props.userLogged ? "User is logged" : "User is not logged"}</div>
+      <div className={styles.Meta_Navbar}>
+        <div key={Math.random()}>{NavbarShort}</div>
+        <div key={Math.random()}>{NavbarLong}</div>
+      </div>
+    </>
   );
 }
 

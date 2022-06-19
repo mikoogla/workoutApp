@@ -1,0 +1,8 @@
+.user {
+  margin: 0;
+  background-color: var(--background_light);
+}
+.logout {
+  background-color: var(--closing_color);
+  margin: 0 0 0 10px;
+}
