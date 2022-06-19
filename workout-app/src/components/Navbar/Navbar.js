@@ -32,7 +32,7 @@ function Navbar() {
   };
 
   const NavbarLong = (
-    <div>
+    <>
       <div className={styles.Navbar}>
         <div className={styles.Navbar__left}>
           <Button
@@ -93,7 +93,7 @@ function Navbar() {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 
   const NavbarShort = (

@@ -73,7 +73,13 @@ const archiveTemplate = [
       {
         type: exerciseTemplates[1],
         units: exerciseTemplates[1].dataTypes,
-        series: [[[10], [9], [8], [7]]],
+        series: [
+          [[10], [9], [8], [8]],
+          [[7], [7], [7], [5]],
+          [[5], [6], [5], [5]],
+          [[4], [3], [4], [4]],
+          [[3], [3], [3], [2]],
+        ],
       },
       {
         type: exerciseTemplates[4],

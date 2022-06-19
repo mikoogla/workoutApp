@@ -25,13 +25,19 @@
 }
 .Allseries {
   flex-direction: column;
+  width: 90%;
+  overflow: hidden;
+  align-items: flex-end;
+}
+.name {
+  background-color: var(--accent_yellow);
+  color: var(--font_color_dark);
 }
 .series {
   box-shadow: none;
 }
 .singleData {
   background-color: var(--accent_main);
-  flex-direction: row;
   margin: 5px 10px;
 }
 .singleUnit {
@@ -40,6 +46,9 @@
   margin: 0px 5px;
 }
 @media (max-width: 780px) {
+  .Allseries {
+    align-items: center;
+  }
   .series {
     flex-direction: column;
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../UI/Card/Card";
 import styles from "./ListLogs.module.css";
 
@@ -20,7 +20,7 @@ export default function ListLogs(props) {
         </div>
         {workout.exercises.map((exercise) => (
           <Card className={styles.exercise}>
-            <div>{exercise.type.name}</div>
+            <Card className={styles.name}>{exercise.type.name}</Card>
             <Card className={styles.Allseries}>
               {exercise.series.map((AllSeries, i) => (
                 <Card className={styles.series}>
