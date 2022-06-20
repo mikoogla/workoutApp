@@ -33,11 +33,12 @@ function App() {
   const logoutHandler = () => {
     localStorage.removeItem("Logged");
     setIsLoggedIn(false);
+    window.location.replace("/userlogin");
   };
   return (
     <ThemeProvider theme={darkTheme}>
       <Router>
-        <NewNavbar userLogged={IsLoggedIn} />
+        <NewNavbar userLogged={IsLoggedIn} onLogout={logoutHandler} />
         <div className="SiteContent">
           <Routes>
             <Route path="/" element={<Dashboard />} />
