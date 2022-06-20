@@ -4,7 +4,7 @@ export default function MenuButton(props) {
   return (
     <button
       onClick={props.onClick}
-      className={`${styles.Button} ${props.className}`}
+      className={` ${props.className} ${styles.Button} `}
     >
       {props.children}
     </button>

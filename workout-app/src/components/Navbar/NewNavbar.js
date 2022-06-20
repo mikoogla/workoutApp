@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import MenuButton from "./UI/MenuButton";
-import Card from "../UI/Card/Card";
 import styles from "./NewNavbar.module.css";
 import UserNavbar from "./UserInfo/UserNavbar";
 import MenuItem from "./UI/MenuItem";

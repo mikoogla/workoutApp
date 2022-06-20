@@ -9,8 +9,8 @@ export default function UserNavbar(props) {
   return (
     <Card className={styles.user}>
       <AccountCircleIcon fontSize="small" />
-      Welcome, User
-      <MenuButton onClick={props.onLogout} className={styles.logout}>
+      User
+      <MenuButton onClick={props.onLogout} className={styles.logoutstyle}>
         Log Out
       </MenuButton>
     </Card>
