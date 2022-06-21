@@ -20,7 +20,9 @@ const darkTheme = createTheme({
 });
 
 function App() {
-  const [IsLoggedIn, setIsLoggedIn] = useState(false);
+  const [IsLoggedIn, setIsLoggedIn] = useState(
+    +localStorage.getItem("Logged") ? true : false
+  );
 
   useEffect(() => {
     if (localStorage.getItem("Logged") === "1") setIsLoggedIn(true);
