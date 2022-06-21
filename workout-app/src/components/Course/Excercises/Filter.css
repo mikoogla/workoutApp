@@ -5,7 +5,7 @@
   margin: 10px 20px;
 }
 #label {
-  background-color: #272727;
+  background-color: var(--background_light);
 }
 @media (max-width: 730px) {
   .filter--style {

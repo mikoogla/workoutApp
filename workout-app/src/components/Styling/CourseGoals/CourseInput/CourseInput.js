@@ -2,7 +2,7 @@
 // import { clear } from "@testing-library/user-event/dist/clear";
 import React, { useState } from "react";
 import styles from "./CourseInput.module.css";
-
+import Input from "../../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 
 const CourseInput = (props) => {
@@ -37,7 +37,8 @@ const CourseInput = (props) => {
         className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
       >
         <label>{LabelText}</label>
-        <input
+        <Input
+          style={{ width: "100%" }}
           type="text"
           value={enteredValue}
           onChange={goalInputChangeHandler}

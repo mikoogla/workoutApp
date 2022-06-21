@@ -1,0 +1,15 @@
+:root {
+  --closing_color: #990033;
+  --background_light: #272727;
+  --background_medium: #1b1b1b;
+  --background_dark: #121212;
+  --font_color: white;
+  --font_color_dark: black;
+  --border_color: white;
+  --warning_color: red;
+  --warning_background: rgb(70, 39, 39);
+  --accent_main: #990033;
+  --accent_yellow: #ffa726;
+  --accent_blue_1: #113557;
+  --accent_blue_2: #1a538b;
+}

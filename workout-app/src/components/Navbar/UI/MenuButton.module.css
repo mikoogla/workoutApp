@@ -1,0 +1,30 @@
+.Button {
+  all: unset;
+  display: flex;
+  padding: 8px 18px;
+  border-radius: 5px;
+  background-color: var(--accent_yellow);
+  color: var(--font_color_dark);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .Button:hover {
+    cursor: pointer;
+    filter: invert(10%);
+  }
+}
+
+.Button:active {
+  filter: invert(10%);
+}
+.Button:not:hover {
+  cursor: pointer;
+  filter: invert(100%);
+}
+.Button:not:focus {
+  cursor: pointer;
+  filter: invert(100%);
+}

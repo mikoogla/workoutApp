@@ -1,0 +1,18 @@
+.CreatorPanel {
+  width: 90%;
+  gap: 0px 15px;
+  box-shadow: none;
+  justify-content: space-between;
+}
+@media (max-width: 780px) {
+  .CreatorPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0px;
+    overflow: hidden;
+  }
+  .CreatorButtons {
+    width: 30vw !important;
+    gap: 10px !important;
+  }
+}

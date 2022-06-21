@@ -1,0 +1,81 @@
+.Meta_Navbar {
+  display: flex !important;
+  flex-direction: row !important;
+  background-color: var(--background_dark) !important;
+}
+
+.menu_item {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+  width: 100%;
+  background-color: inherit;
+}
+
+.menu_item:hover {
+  filter: invert(15%);
+  cursor: pointer;
+}
+
+.Navbar {
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row !important;
+  align-items: center !important;
+  overflow: hidden;
+  background-color: var(--background_dark) !important;
+}
+
+.navbar_link {
+  background-color: var(--background_dark) !important;
+}
+a {
+  all: unset;
+}
+a:hover {
+  filter: invert(20%);
+  cursor: pointer;
+}
+.Navbar__left {
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+@media (max-width: 700px) {
+  .Navbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  .Meta_Navbar {
+    display: flex !important;
+    justify-content: end;
+  }
+  .Navbar_short {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+.Navbar__right {
+  display: flex;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+.button {
+  height: 30px;
+  margin: 5px;
+}
+
+@media (min-width: 700px) {
+  .Navbar_short {
+    display: flex;
+    justify-content: end;
+    visibility: hidden;
+    width: 0px;
+  }
+}

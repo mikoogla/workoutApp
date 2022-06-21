@@ -1,0 +1,10 @@
+.user {
+  margin: 0;
+  background-color: var(--background_light);
+  gap: 0.5rem;
+  align-items: center;
+}
+.logoutstyle {
+  background-color: var(--closing_color);
+  color: var(--font_color);
+}
