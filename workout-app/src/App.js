@@ -29,6 +29,7 @@ function App() {
   const loginHandler = () => {
     localStorage.setItem("Logged", "1");
     setIsLoggedIn(true);
+    window.location.replace("/dashboard");
   };
   const logoutHandler = () => {
     localStorage.removeItem("Logged");
@@ -41,7 +42,7 @@ function App() {
         <NewNavbar userLogged={IsLoggedIn} onLogout={logoutHandler} />
         <div className="SiteContent">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/landingpage" element={<LandingPage />} />
             <Route

@@ -28,6 +28,6 @@
   width: 90%;
 }
 .footer_registerLink {
-  color: var(--accent_blue_2);
+  color: var(--href);
   margin: 0 5px;
 }

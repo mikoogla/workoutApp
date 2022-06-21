@@ -12,4 +12,5 @@
   --accent_yellow: #ffa726;
   --accent_blue_1: #113557;
   --accent_blue_2: #1a538b;
+  --href: var(--accent_blue_2);
 }
