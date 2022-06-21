@@ -16,17 +16,14 @@ function UserLogin(props) {
   );
 
   const emailInputHandler = (event) => {
-    setisValid(true);
     setEmail(event.target.value);
-    console.log(event.target.value);
   };
 
   const passwordInputHandler = (event) => {
-    setisValid(true);
     setPassword(event.target.value);
-    console.log(event.target.value);
   };
-  const loginHandler = () => {
+
+  const verification = () => {
     if (
       email.search("@") === -1 ||
       email.search(".") === -1 ||
@@ -37,7 +34,11 @@ function UserLogin(props) {
     }
 
     setisValid(true);
-    props.onLogin();
+    return 1;
+  };
+
+  const loginHandler = () => {
+    verification() && props.onLogin();
   };
 
   useEffect(() => {
@@ -46,6 +47,18 @@ function UserLogin(props) {
       setIsLoggedin(props.loginState);
     };
   }, [props.loginState]);
+
+  useEffect(() => {
+    let identifier = "";
+    if (!IsValid) {
+      identifier = setTimeout(() => {
+        verification();
+      }, 1000);
+    }
+    return () => {
+      clearTimeout(identifier);
+    };
+  }, [email, password, verification]);
   return (
     <div className={styles.container}>
       {IsLoggedin ? (
