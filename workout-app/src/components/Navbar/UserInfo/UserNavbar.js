@@ -9,7 +9,7 @@ export default function UserNavbar(props) {
   return (
     <Card className={styles.user}>
       <AccountCircleIcon fontSize="small" />
-      User
+      {localStorage.getItem("User")}
       <MenuButton onClick={props.onLogout} className={styles.logoutstyle}>
         Log Out
       </MenuButton>

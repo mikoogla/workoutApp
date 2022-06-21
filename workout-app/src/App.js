@@ -23,6 +23,7 @@ function App() {
   const [IsLoggedIn, setIsLoggedIn] = useState(
     +localStorage.getItem("Logged") ? true : false
   );
+  const [user, setUser] = useState(localStorage.getItem("User"));
 
   useEffect(() => {
     if (localStorage.getItem("Logged") === "1") setIsLoggedIn(true);
@@ -35,6 +36,7 @@ function App() {
   };
   const logoutHandler = () => {
     localStorage.removeItem("Logged");
+    localStorage.removeItem("User");
     setIsLoggedIn(false);
     window.location.replace("/userlogin");
   };
@@ -54,6 +56,7 @@ function App() {
                   onLogin={loginHandler}
                   onLogout={logoutHandler}
                   loginState={IsLoggedIn}
+                  username={user}
                 />
               }
             />

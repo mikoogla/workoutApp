@@ -11,5 +11,17 @@ const users = [
     login: "japko12",
     password: "123",
   },
+  {
+    id: Math.random(),
+    email: "@.",
+    login: "japko12",
+    password: "qwe",
+  },
+  {
+    id: Math.random(),
+    email: "admin@admin.pl",
+    login: "admin",
+    password: "admin",
+  },
 ];
 export { users };

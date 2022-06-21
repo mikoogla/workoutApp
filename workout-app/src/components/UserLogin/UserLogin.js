@@ -10,17 +10,32 @@ function UserLogin(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [IsValid, setisValid] = useState(true);
+  const [IsExisting, setIsExisting] = useState(true);
 
-  const invalidWarning = (
+  const invalidWarning = <div className={styles.warning}>Invalid data</div>;
+  const NotExistingWarning = (
     <div className={styles.warning}>Invalid email or password</div>
   );
 
+  let user = { login: "", email: "" };
+  const DBcheck = () => {
+    const index = users.map((e) => e.email).indexOf(email);
+    if (index !== -1 && users[index].password === password) {
+      console.log("data OK");
+      user.login = users[index].login;
+      return 1;
+    }
+    console.log("data NOT OK");
+  };
+
   const emailInputHandler = (event) => {
     setEmail(event.target.value);
+    setIsExisting(true);
   };
 
   const passwordInputHandler = (event) => {
     setPassword(event.target.value);
+    setIsExisting(true);
   };
 
   const verification = () => {
@@ -38,7 +53,14 @@ function UserLogin(props) {
   };
 
   const loginHandler = () => {
-    verification() && props.onLogin();
+    if (verification() === 1) {
+      if (DBcheck() === 1) {
+        localStorage.setItem("User", user.login);
+        props.onLogin();
+      } else {
+        setIsExisting(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -58,7 +80,8 @@ function UserLogin(props) {
     return () => {
       clearTimeout(identifier);
     };
-  }, [email, password, verification]);
+  }, [email, password, IsValid]);
+
   return (
     <div className={styles.container}>
       {IsLoggedin ? (
@@ -76,6 +99,7 @@ function UserLogin(props) {
               onChange={passwordInputHandler}
             />
             {!IsValid && invalidWarning}
+            {!IsExisting && NotExistingWarning}
           </div>
           <div className={styles.login_buttons}>
             <Button onClick={loginHandler}>LOGIN</Button>
