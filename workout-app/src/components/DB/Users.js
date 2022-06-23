@@ -13,7 +13,7 @@ const users = [
   },
   {
     id: Math.random(),
-    email: "@.",
+    email: "a@b.c",
     login: "japko12",
     password: "qwe",
   },
