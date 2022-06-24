@@ -9,8 +9,6 @@ function emailIsValid(email) {
   return /\S+@\S+\.\S+/.test(email);
 }
 
-function isInDB(state) {}
-
 const userReducer = (state, action) => {
   if (action.type === "SET_EMAIL") {
     return {
@@ -25,21 +23,24 @@ const userReducer = (state, action) => {
       isPasswordValid: action.val.length > 0,
     };
   } else if (action.type === "VALID_CHECK") {
-    console.log("kurwa" + (state.isEmailValid && state.isPasswordValid));
+    console.log("4 - validity check ");
     return {
       ...state,
       isValid: state.isEmailValid && state.isPasswordValid,
     };
   } else if (action.type === "DB_CHECK") {
+    console.log("7 - cheeck in database ");
     const index = users.map((e) => e.email).indexOf(state.username);
-    console.log("dwdw");
     if (index !== -1 && users[index].password === state.password) {
       return {
-        IsInDB: true,
-        login: users[index].login,
         ...state,
+        isInDB: true,
+        login: users[index].login,
       };
     } else return { ...state, isInDB: false };
+  } else if (action.type === "SHOW_WARNINGS") {
+    console.log("2 - reset warnings");
+    return { ...state, hideWarnings: false };
   }
 };
 
@@ -51,8 +52,9 @@ function UserLogin(props) {
     password: "",
     isEmailValid: false,
     isPasswordValid: false,
-    isValid: true,
-    isInDB: true,
+    isValid: false,
+    isInDB: false,
+    hideWarnings: true,
   });
 
   const invalidWarning = <div className={styles.warning}>Invalid data</div>;
@@ -75,23 +77,36 @@ function UserLogin(props) {
   };
 
   const loginHandler = () => {
+    console.log("1 - clicked login");
+    dispatchUserData({
+      type: "SHOW_WARNINGS",
+    });
+    console.log("3 - warnings changed");
     dispatchUserData({
       type: "VALID_CHECK",
     });
-
+    console.log("5 - validity checked ");
     if (UserData.isValid === false) {
       return;
     }
-    console.log("is valid: " + UserData.isValid);
+    console.log("6 - validitytest passed ");
     dispatchUserData({
       type: "DB_CHECK",
     });
-
+    const d = () => {
+      dispatchUserData({
+        type: "DB_CHECK",
+      });
+    };
+    d();
+    console.log("8 - database checked ");
     if (UserData.isInDB === false) {
       return;
     }
-
-    console.log("LOGGING IN");
+    console.log("9 - database test passed - logging in ");
+    debugger;
+    localStorage.setItem("User", UserData.login.toString());
+    props.onLogin();
   };
 
   useEffect(() => {
@@ -120,7 +135,7 @@ function UserLogin(props) {
           <div className={styles.login_title}>Login</div>
           <div
             className={`${styles.login_input} ${
-              !UserData.isValid && styles.invalid
+              !UserData.isValid && !UserData.hideWarnings && styles.invalid
             }`}
           >
             <Input label="e-mail" type="email" onChange={emailInputHandler} />
@@ -129,8 +144,9 @@ function UserLogin(props) {
               type="password"
               onChange={passwordInputHandler}
             />
-            {!UserData.isValid && invalidWarning}
-            {!UserData.isInDB && NotExistingWarning}
+
+            {!UserData.isValid && !UserData.hideWarnings && invalidWarning}
+            {!UserData.isInDB && !UserData.hideWarnings && NotExistingWarning}
           </div>
           <div className={styles.login_buttons}>
             <Button onClick={loginHandler}>LOGIN</Button>
