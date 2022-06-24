@@ -9,6 +9,8 @@ function emailIsValid(email) {
   return /\S+@\S+\.\S+/.test(email);
 }
 
+function isInDB(state) {}
+
 const userReducer = (state, action) => {
   if (action.type === "SET_EMAIL") {
     return {
@@ -16,45 +18,36 @@ const userReducer = (state, action) => {
       username: action.val,
       isEmailValid: emailIsValid(action.val.toString()),
     };
-  }
-  if (action.type === "SET_PASSWORD") {
+  } else if (action.type === "SET_PASSWORD") {
     return {
       ...state,
       password: action.val,
       isPasswordValid: action.val.length > 0,
     };
-  }
-  if (action.type === "VALID_CHECK") {
+  } else if (action.type === "VALID_CHECK") {
+    console.log("kurwa" + (state.isEmailValid && state.isPasswordValid));
     return {
       ...state,
       isValid: state.isEmailValid && state.isPasswordValid,
     };
-  }
-  if (action.type === "DB_CHECK") {
+  } else if (action.type === "DB_CHECK") {
     const index = users.map((e) => e.email).indexOf(state.username);
+    console.log("dwdw");
     if (index !== -1 && users[index].password === state.password) {
-      console.log("data OK");
-      state.login = users[index].login;
-      state.isInDB = true;
-    } else state.isInDB = false;
-    return {
-      ...state,
-    };
+      return {
+        IsInDB: true,
+        login: users[index].login,
+        ...state,
+      };
+    } else return { ...state, isInDB: false };
   }
-  return {
-    username: "",
-    login: "",
-    password: "",
-    isEmailValid: true,
-    isPasswordValid: true,
-    isValid: true,
-  };
 };
 
 function UserLogin(props) {
   const [IsLoggedin, setIsLoggedin] = useState(props.loginState);
   const [UserData, dispatchUserData] = useReducer(userReducer, {
     username: "",
+    login: "",
     password: "",
     isEmailValid: false,
     isPasswordValid: false,
@@ -85,17 +78,20 @@ function UserLogin(props) {
     dispatchUserData({
       type: "VALID_CHECK",
     });
-    if (UserData.isValid === false) return;
 
+    if (UserData.isValid === false) {
+      return;
+    }
+    console.log("is valid: " + UserData.isValid);
     dispatchUserData({
       type: "DB_CHECK",
     });
 
-    if (UserData.isInDB === false) return;
-    else {
-      localStorage.setItem("User", UserData.login);
-      props.onLogin();
+    if (UserData.isInDB === false) {
+      return;
     }
+
+    console.log("LOGGING IN");
   };
 
   useEffect(() => {
@@ -107,18 +103,13 @@ function UserLogin(props) {
 
   useEffect(() => {
     let identifier = "";
-    if (!(UserData.isEmailValid && UserData.isPasswordValid)) {
+    if (!UserData.isValid) {
       identifier = setTimeout(() => {}, 1000);
     }
     return () => {
       clearTimeout(identifier);
     };
-  }, [
-    UserData.username,
-    UserData.password,
-    UserData.isEmailValid,
-    UserData.isPasswordValid,
-  ]);
+  }, [UserData.isValid]);
 
   return (
     <div className={styles.container}>
