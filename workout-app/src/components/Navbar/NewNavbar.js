@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import styles from "./NewNavbar.module.css";
+import React, { useEffect, useState, useContext } from "react";
 import UserNavbar from "./UserInfo/UserNavbar";
 import MenuItem from "./UI/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
-export default function NewNavbar(props) {
+import Context from "../../Context";
+
+import styles from "./NewNavbar.module.css";
+export default function NewNavbar() {
+  const ctx = useContext(Context);
   const [windowSize, setWindowSize] = useState({
     height: window.height,
     width: window.innerWidth,
@@ -21,7 +24,7 @@ export default function NewNavbar(props) {
   }, []);
 
   const Userinfo = () =>
-    props.userLogged ? (
+    ctx.isLoggedin ? (
       <UserNavbar onLogout={handleLogout} />
     ) : (
       <div className={styles.menuitems}>
@@ -51,12 +54,12 @@ export default function NewNavbar(props) {
   );
 
   const handleLogout = () => {
-    props.onLogout();
+    ctx.onLogout();
   };
   return (
     <div className={styles.navbar}>
       <Userinfo></Userinfo>
-      {props.userLogged && <Items></Items>}
+      {ctx.isLoggedin && <Items></Items>}
     </div>
   );
 }

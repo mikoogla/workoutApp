@@ -4,7 +4,7 @@ import styles from "./MenuItem.module.css";
 
 export default function MenuItem(props) {
   return (
-    <a href={props.link}>
+    <a className={styles.className} href={props.link}>
       <Card className={`${styles.item} ${props.className}`}>
         {props.children}
       </Card>

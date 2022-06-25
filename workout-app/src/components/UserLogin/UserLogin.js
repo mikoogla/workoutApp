@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useReducer, useCallback } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 import styles from "./UserLogin.module.css";
 import Card from "../UI/Card/Card";
 import { users } from "../DB/Users";
+import Context from "../../Context";
 
 const invalidWarning = <div className={styles.warning}>Invalid data</div>;
 const NotExistingWarning = (
@@ -31,8 +32,9 @@ const userReducer = (state, action) => {
   }
 };
 
-function UserLogin(props) {
-  const [IsLoggedin, setIsLoggedin] = useState(props.loginState);
+function UserLogin() {
+  const context = useContext(Context);
+  const [IsLoggedin, setIsLoggedin] = useState(context.loginState);
   const [UserData, dispatchUserData] = useReducer(userReducer, {
     email: "",
     login: "",
@@ -78,7 +80,7 @@ function UserLogin(props) {
     if (UserData.isEmailValid && UserData.isPasswordValid) {
       if (user !== -1) {
         localStorage.setItem("User", user.login);
-        props.onLogin();
+        context.onLogin();
       } else {
         setIsInDB(false);
       }
@@ -86,8 +88,8 @@ function UserLogin(props) {
   };
 
   useEffect(() => {
-    setIsLoggedin(props.loginState);
-  }, [props.loginState]);
+    setIsLoggedin(context.loginState);
+  }, [context.loginState]);
 
   useEffect(() => {
     setisValid(UserData.isEmailValid && UserData.isPasswordValid);
