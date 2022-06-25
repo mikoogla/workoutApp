@@ -4,6 +4,8 @@ const Context = createContext({
   isLoggedin: false,
   onLogout: () => {},
   onLogin: () => {},
+  user: "null",
+  setUser: () => {},
 });
 
 export const ContextProvider = (props) => {
@@ -33,6 +35,8 @@ export const ContextProvider = (props) => {
         isLoggedin: IsLoggedIn,
         onLogout: logoutHandler,
         onLogin: loginHandler,
+        user: user,
+        setUser: setUser,
       }}
     >
       {props.children}

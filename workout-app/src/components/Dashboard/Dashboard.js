@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import AddIcon from "@mui/icons-material/Add";
@@ -6,6 +6,7 @@ import NewWorkoutComponent from "./NewData/NewWorkoutComponent";
 import NewPlanComponent from "./NewData/NewPlanComponent";
 import NewTypeComponent from "./NewData/NewTypeComponent";
 import ListLogs from "./SavedData/ListLogs";
+import Context from "../../Context";
 
 import {
   exerciseTemplates,
@@ -19,13 +20,14 @@ const lightCardStyle = { backgroundColor: "var(--background_medium)" };
 const columnCardStyle = { flexDirection: "column" };
 
 const Dashboard = () => {
+  const ctx = useContext(Context);
   const [NewWorkout, setNewWorkout] = useState(false);
   const [NewPlan, setNewPlan] = useState(false);
   const [NewType, setNewType] = useState(false);
 
   return (
     <div className={styles.Dashboard}>
-      <Card>Hi, User! Start your training now:</Card>
+      <Card>{`Hi, ${ctx.user} Start your training now:`}</Card>
       <Card style={{ ...columnCardStyle }}>
         <Card className={styles.CreatorPanel}>
           <Button

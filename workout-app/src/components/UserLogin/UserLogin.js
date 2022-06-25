@@ -80,6 +80,7 @@ function UserLogin() {
     if (UserData.isEmailValid && UserData.isPasswordValid) {
       if (user !== -1) {
         localStorage.setItem("User", user.login);
+        context.setUser(user.login); //redundant but for the future refactor
         context.onLogin();
       } else {
         setIsInDB(false);
