@@ -42,6 +42,8 @@ function UserLogin(props) {
     isInDB: null,
   });
   const [isValid, setisValid] = useState(null);
+  const [isInDB, setIsInDB] = useState(null);
+  const [click, setClick] = useState(false);
 
   function SearchInDB() {
     const index = users.map((e) => e.email).indexOf(UserData.email);
@@ -53,6 +55,8 @@ function UserLogin(props) {
   }
 
   const emailInputHandler = (event) => {
+    setIsInDB(true);
+    setisValid(true);
     dispatchUserData({
       type: "SET_EMAIL",
       val: event.target.value,
@@ -60,6 +64,8 @@ function UserLogin(props) {
   };
 
   const passwordInputHandler = (event) => {
+    setIsInDB(true);
+    setisValid(true);
     dispatchUserData({
       type: "SET_PASSWORD",
       val: event.target.value,
@@ -67,23 +73,25 @@ function UserLogin(props) {
   };
 
   const loginHandler = () => {
+    setClick((e) => !e);
     let user = SearchInDB();
-    if (user !== -1) {
-      localStorage.setItem("User", user.login);
-      props.onLogin();
+    if (UserData.isEmailValid && UserData.isPasswordValid) {
+      if (user !== -1) {
+        localStorage.setItem("User", user.login);
+        props.onLogin();
+      } else {
+        setIsInDB(false);
+      }
     }
   };
 
   useEffect(() => {
     setIsLoggedin(props.loginState);
-    return () => {
-      setIsLoggedin(props.loginState);
-    };
   }, [props.loginState]);
 
   useEffect(() => {
     setisValid(UserData.isEmailValid && UserData.isPasswordValid);
-  }, [UserData]);
+  }, [click]);
 
   return (
     <div className={styles.container}>
@@ -105,7 +113,7 @@ function UserLogin(props) {
             />
 
             {isValid !== null && !isValid && invalidWarning}
-            {UserData.isInDB !== null && NotExistingWarning}
+            {isInDB !== null && !isInDB && NotExistingWarning}
           </div>
           <div className={styles.login_buttons}>
             <Button onClick={loginHandler}>LOGIN</Button>
