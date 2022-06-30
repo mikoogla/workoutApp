@@ -15,6 +15,7 @@
   margin: 0 5px 0 0;
 }
 .menuitems {
+  text-decoration: none;
   overflow: hidden;
   display: flex;
   flex-direction: row;

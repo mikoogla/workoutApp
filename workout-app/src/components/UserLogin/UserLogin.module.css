@@ -1,68 +1,44 @@
-/* Do poprawienia zamiana 
-np. 
-className="jaksklasa" na className={styles.jakasklasa}
-w pliku userLogin.css */
-.app {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+.login {
+  flex-direction: column;
+  width: 90%;
+  max-width: 611px;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  margin: 50px 0 0 0;
+  overflow: hidden;
 }
-
-input[type="text"],
-input[type="password"] {
-  height: 25px;
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
-}
-
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: var(--accent_blue_1);
-  border: 1px solid var(--accent_blue_2);
-  color: var(--font_color);
-  padding: 10px 20px;
-}
-
-input[type="submit"]:hover {
-  background: var(--accent_blue_2);
-}
-
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-form {
-  padding: 2rem;
-}
-
-.list-container {
-  display: flex;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.title {
-  font-size: 25px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.input__Container {
+.login_input {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 10px;
   align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+.login_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+.login_footer {
+  display: flex;
+  width: 90%;
+}
+.footer_registerLink {
+  color: var(--href);
+  margin: 0 5px;
+}
+.invalid {
+  border-color: var(--warning_color);
+  border-width: 0.5px;
+  border-style: solid;
+}
+.warning {
+  color: var(--warning_color);
+  font-size: 12px;
 }

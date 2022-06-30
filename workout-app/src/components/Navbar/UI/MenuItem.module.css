@@ -1,4 +1,7 @@
 .item {
+  text-decoration: none;
+  box-shadow: none;
+  color: var(--font_color);
   background-color: var(--accent_blue_1);
   margin: 0;
 }

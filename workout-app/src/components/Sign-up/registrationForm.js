@@ -1,104 +1,46 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
 import styles from "./registrationFormStyle.module.css";
-
-function RegistrationForm() {
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
-
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    if (id === "firstName") {
-      setFirstName(value);
-    }
-    if (id === "lastName") {
-      setLastName(value);
-    }
-    if (id === "email") {
-      setEmail(value);
-    }
-    if (id === "password") {
-      setPassword(value);
-    }
-    if (id === "confirmPassword") {
-      setConfirmPassword(value);
-    }
-  };
-
-  const handleSubmit = () => {
-    console.log(firstName, lastName, email, password, confirmPassword);
+import Card from "../UI/Card/Card";
+function UserLogin(props) {
+  const [Created, setCreated] = useState(false);
+  const loginHandler = () => {
+    setCreated(true);
+    // props.onLogin();
   };
 
   return (
-    <div>
-      <div className={styles.form}>
-        <nav class="bg-dark navbar-dark navbar">
-          <div className="row col-12 d-flex justify-content-center text-white">
-            <div className={styles.title}>Registration</div>
+    <div className={styles.container}>
+      {Created ? (
+        <Card className={styles.created}>
+          Account succesfully created
+          <a className={styles.footer_registerLink} href="/userlogin">
+            Log in
+          </a>
+        </Card>
+      ) : (
+        <Card className={styles.login}>
+          <div className={styles.login_title}>Register</div>
+          <div className={styles.login_input}>
+            <Input label="e-mail" type="email" />
+            <Input label="login" type="email" />
+            <Input label="password" type="password" />
+            <Input label="re-password" type="password" />
           </div>
-        </nav>
-        <div className="form-body">
-          <TextField
-            style={{ margin: "5px 0 5px" }}
-            className={styles.form__input}
-            id="firstName"
-            label="First name"
-            variant="outlined"
-            onChange={(e) => handleInputChange(e)}
-          />
-
-          <div class="break"></div>
-
-          <TextField
-            style={{ margin: "5px 0 5px" }}
-            className={styles.form__input}
-            id="userName"
-            label="Username"
-            variant="outlined"
-            onChange={(e) => handleInputChange(e)}
-          />
-
-          <div class="break"></div>
-
-          <TextField
-            style={{ margin: "5px 0 5px" }}
-            className={styles.form__input}
-            id="password"
-            label="Password"
-            type="password"
-            variant="outlined"
-            onChange={(e) => handleInputChange(e)}
-          />
-
-          <div class="break"></div>
-
-          <TextField
-            style={{ margin: "5px 0 5px" }}
-            className={styles.form__input}
-            id="rePassword"
-            label="Re-password"
-            type="password"
-            variant="outlined"
-            onChange={(e) => handleInputChange(e)}
-          />
-        </div>
-      </div>
-
-      <div className={styles.footer}>
-        <Button
-          variant="contained"
-          color="success"
-          onClick={() => handleSubmit()}
-        >
-          Register
-        </Button>
-      </div>
+          <div className={styles.login_buttons}>
+            <Button onClick={loginHandler}>REGISTER</Button>
+          </div>
+          <div className={styles.login_footer}>
+            Already have an account?{" "}
+            <a className={styles.footer_registerLink} href="/userlogin">
+              Log in
+            </a>
+          </div>
+        </Card>
+      )}
     </div>
   );
 }
 
-export default RegistrationForm;
+export default UserLogin;
