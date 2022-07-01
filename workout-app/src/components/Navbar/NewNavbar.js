@@ -58,8 +58,8 @@ export default function NewNavbar() {
   };
   return (
     <div className={styles.navbar}>
-      <Userinfo></Userinfo>
-      {ctx.isLoggedin && <Items></Items>}
+      <Userinfo />
+      {ctx.isLoggedin && <Items />}
     </div>
   );
 }
