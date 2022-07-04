@@ -6,12 +6,12 @@ import Course from "../components/Course/Excercises/Course";
 import Dashboard from "../components/Dashboard/Dashboard";
 import UserLogin from "../components/UserLogin/UserLogin";
 import Styling from "../components/Styling/App";
-import Users from "../components/class_components/Users";
-
+import UserFinder from "../components/class_components/UserFinder";
+import styles from "./SiteContent.module.css";
 export default function SiteContent() {
   return (
     <Router>
-      <div className="SiteContent">
+      <div className={styles.SiteContent}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -20,7 +20,7 @@ export default function SiteContent() {
           <Route path="/sign-up" element={<RegistrationForm />} />
           <Route path="/course" element={<Course />} />
           <Route path="/styling-course" element={<Styling />} />
-          <Route path="/class" element={<Users />} />
+          <Route path="/class" element={<UserFinder />} />
         </Routes>
       </div>
     </Router>
