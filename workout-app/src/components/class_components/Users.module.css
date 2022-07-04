@@ -1,0 +1,24 @@
+.users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem auto;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.users ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background-color: black;
+  color: white;
+}

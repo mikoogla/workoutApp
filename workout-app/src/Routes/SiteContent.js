@@ -6,6 +6,7 @@ import Course from "../components/Course/Excercises/Course";
 import Dashboard from "../components/Dashboard/Dashboard";
 import UserLogin from "../components/UserLogin/UserLogin";
 import Styling from "../components/Styling/App";
+import Users from "../components/class_components/Users";
 
 export default function SiteContent() {
   return (
@@ -19,6 +20,7 @@ export default function SiteContent() {
           <Route path="/sign-up" element={<RegistrationForm />} />
           <Route path="/course" element={<Course />} />
           <Route path="/styling-course" element={<Styling />} />
+          <Route path="/class" element={<Users />} />
         </Routes>
       </div>
     </Router>
