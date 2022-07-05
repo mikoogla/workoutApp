@@ -45,6 +45,7 @@ export default function NewNavbar() {
           <MenuItem link={"/styling-course"}>Styling</MenuItem>
           <MenuItem link={"/userlogin"}>log</MenuItem>
           <MenuItem link={"/class"}>class</MenuItem>
+          <MenuItem link={"/requests"}>req</MenuItem>
         </>
       ) : (
         <MenuItem link={"/userlogin"}>

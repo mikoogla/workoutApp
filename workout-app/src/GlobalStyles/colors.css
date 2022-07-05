@@ -14,3 +14,9 @@
   --accent_blue_2: #1a538b;
   --href: var(--accent_blue_2);
 }
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}

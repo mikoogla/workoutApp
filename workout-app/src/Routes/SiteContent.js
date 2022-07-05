@@ -8,6 +8,8 @@ import UserLogin from "../components/UserLogin/UserLogin";
 import Styling from "../components/Styling/App";
 import UserFinder from "../components/class_components/UserFinder";
 import styles from "./SiteContent.module.css";
+import Requests from "../components/Requests/Requests";
+
 export default function SiteContent() {
   return (
     <Router>
@@ -21,6 +23,7 @@ export default function SiteContent() {
           <Route path="/course" element={<Course />} />
           <Route path="/styling-course" element={<Styling />} />
           <Route path="/class" element={<UserFinder />} />
+          <Route path="/requests" element={<Requests />} />
         </Routes>
       </div>
     </Router>
