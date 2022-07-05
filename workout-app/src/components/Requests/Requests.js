@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import MoviesList from "./MoviesList";
 import styles from "./Styles.module.css";
+import { DatabaseURL } from "../DB/Private";
 
 export default function Requests() {
   const [Movies, setMovies] = useState([]);
   const [IsLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  async function fetchMovies() {
+  const fetchMovies = useCallback(async () => {
     setMovies([]);
     setIsLoading(true);
     setError(null);
@@ -32,7 +33,11 @@ export default function Requests() {
       setError(error.message);
     }
     setIsLoading(false);
-  }
+  }, []);
+
+  useEffect(() => {
+    fetchMovies();
+  }, [fetchMovies]);
 
   const Content = () => {
     if (IsLoading) {
