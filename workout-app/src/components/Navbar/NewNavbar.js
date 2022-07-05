@@ -28,6 +28,7 @@ export default function NewNavbar() {
       <UserNavbar onLogout={handleLogout} />
     ) : (
       <div className={styles.menuitems}>
+        <MenuItem link={"/landingpage"}>Home</MenuItem>
         <MenuItem link={"/sign-up"}>Sign Up</MenuItem>
         <MenuItem link={"/userlogin"}>Login</MenuItem>
       </div>
