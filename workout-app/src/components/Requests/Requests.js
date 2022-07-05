@@ -3,7 +3,7 @@ import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import MoviesList from "./MoviesList";
 import styles from "./Styles.module.css";
-import { DatabaseURL } from "../../Private/Private";
+import { DatabaseURL } from "../../private/WorkoutApp-private/Private";
 import AddMovie from "./AddMovie";
 
 export default function Requests() {
