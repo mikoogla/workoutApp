@@ -1,4 +1,5 @@
 import React from "react"
+import { AiFillApple, AiOutlineGoogle, AiFillWindows } from "react-icons/ai"
 import WelcomeToIcon from "./assets/WelcomeToIcon"
 
 import styles from "./WelcomeToSection.module.css"
@@ -13,9 +14,15 @@ const WelcomeToSection = () => {
 					<a href='/userlogin'>Get Started</a>
 				</div>
 				<div className={styles["company-icons"]}>
-					<span className={styles["company-icons__item"]}>App store</span>
-					<span className={styles["company-icons__item"]}>Google Play</span>
-					<span className={styles["company-icons__item"]}>Windows</span>
+					<span className={styles["company-icons__item"]}>
+						{<AiFillApple />}App Store
+					</span>
+					<span className={styles["company-icons__item"]}>
+						{<AiOutlineGoogle />}Google Play
+					</span>
+					<span className={styles["company-icons__item"]}>
+						{<AiFillWindows />}Windows
+					</span>
 				</div>
 			</div>
 		</div>
