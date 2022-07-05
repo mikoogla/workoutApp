@@ -1,9 +1,9 @@
 import React from "react"
-import Header from ".//header.js"
+import WelcomeToSection from "./WelcomeToSection.js"
 
 const LandingPage = () => (
 	<div>
-		<Header />
+		<WelcomeToSection />
 	</div>
 )
 
