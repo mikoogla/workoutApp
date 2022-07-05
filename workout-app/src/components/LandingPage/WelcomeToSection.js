@@ -1,18 +1,15 @@
 import React from "react"
+import WelcomeToIcon from "./assets/WelcomeToIcon"
 
 import styles from "./WelcomeToSection.module.css"
 
 const WelcomeToSection = () => {
 	return (
-		<header className={styles.header}>
+		<div className={styles.section}>
 			<div className={styles["intro-logo"]} style={{ marginTop: "30px" }}>
-				<img
-					alt='ok'
-					src={require("../../assets/images/logo2.png")}
-					width={100}
-				/>
+				<WelcomeToIcon />
 				<h1>Welcome to the GYM</h1>
-				<div className={styles['intro-button']}>
+				<div className={styles["intro-button"]}>
 					<a href='/userlogin'>Get Started</a>
 				</div>
 				<div className={styles["company-icons"]}>
@@ -21,7 +18,7 @@ const WelcomeToSection = () => {
 					<span className={styles["company-icons__item"]}>Windows</span>
 				</div>
 			</div>
-		</header>
+		</div>
 	)
 }
 
