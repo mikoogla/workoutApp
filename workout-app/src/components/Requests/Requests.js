@@ -3,7 +3,8 @@ import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import MoviesList from "./MoviesList";
 import styles from "./Styles.module.css";
-import { DatabaseURL } from "../DB/Private";
+import { DatabaseURL } from "../../Private/Private";
+import AddMovie from "./AddMovie";
 
 export default function Requests() {
   const [Movies, setMovies] = useState([]);
@@ -15,7 +16,7 @@ export default function Requests() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("https://swapi.dev/api/films/");
+      const response = await fetch(`${DatabaseURL}/movies.json`);
       if (!response.ok) throw new Error("Error: " + response.status);
       const data = await response.json();
 
@@ -55,6 +56,7 @@ export default function Requests() {
   };
   return (
     <div className={styles.main}>
+      <AddMovie />
       <Button onClick={fetchMovies}>Fetch Movies</Button>
       <Card className={styles.MoviesContainer}>
         <Content />
