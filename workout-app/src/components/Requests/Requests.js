@@ -11,6 +11,21 @@ export default function Requests() {
   const [IsLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  async function addMovie(movie) {
+    console.log(movie);
+    const response = await fetch(`${DatabaseURL}/movies.json`, {
+      method: "POST",
+      body: JSON.stringify(movie),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    setMovies([...Movies, data]);
+    console.log(data);
+    fetchMovies();
+  }
+
   const fetchMovies = useCallback(async () => {
     setMovies([]);
     setIsLoading(true);
@@ -20,15 +35,16 @@ export default function Requests() {
       if (!response.ok) throw new Error("Error: " + response.status);
       const data = await response.json();
 
-      const transfromedMovies = data.results.map((movie) => {
-        return {
-          id: movie.episode_id,
-          title: movie.title,
-          openingText: movie.opening_crawl,
-          releaseDate: movie.release_date,
-        };
-      });
-      setMovies(transfromedMovies);
+      const loadedMovies = [];
+      for (const key in data) {
+        loadedMovies.push({
+          id: key,
+          title: data[key].title,
+          openingText: data[key].openingText,
+          releaseDate: data[key].releaseDate,
+        });
+      }
+      setMovies(loadedMovies);
       setIsLoading(false);
     } catch (error) {
       setError(error.message);
@@ -56,7 +72,7 @@ export default function Requests() {
   };
   return (
     <div className={styles.main}>
-      <AddMovie />
+      <AddMovie onAddMovie={addMovie} />
       <Button onClick={fetchMovies}>Fetch Movies</Button>
       <Card className={styles.MoviesContainer}>
         <Content />

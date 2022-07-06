@@ -1,9 +1,7 @@
-import React from "react";
-import TextField from "@mui/material/TextField";
-
-export default function Input(props) {
+import React, { forwardRef } from "react";
+const Input = forwardRef((props, ref) => {
   return (
-    <TextField
+    <input
       type={props.type}
       min={props.min}
       max={props.max}
@@ -11,6 +9,9 @@ export default function Input(props) {
       value={props.value}
       style={props.style}
       label={props.label}
+      ref={ref}
     />
   );
-}
+});
+
+export default Input;
