@@ -5,6 +5,8 @@ import MoviesList from "./MoviesList";
 import styles from "./Styles.module.css";
 import { DatabaseURL } from "../../private/WorkoutApp-private/Private";
 import AddMovie from "./AddMovie";
+import Counter from "../CustomHooks/Counter";
+import TaskContainer from "../CustomHooks/Tasks/TaskContainer";
 
 export default function Requests() {
   const [Movies, setMovies] = useState([]);
@@ -72,6 +74,8 @@ export default function Requests() {
   };
   return (
     <div className={styles.main}>
+      <Counter />
+      <TaskContainer />
       <AddMovie onAddMovie={addMovie} />
       <Button onClick={fetchMovies}>Fetch Movies</Button>
       <Card className={styles.MoviesContainer}>
