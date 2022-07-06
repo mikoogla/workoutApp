@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function TaskItem() {
-  return <div>TaskItem</div>;
+export default function TaskItem(props) {
+  return <div>{props.task.content}</div>;
 }
