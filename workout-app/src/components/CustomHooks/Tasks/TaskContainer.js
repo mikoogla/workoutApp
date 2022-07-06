@@ -55,10 +55,15 @@ export default function TaskContainer() {
   const Content = () => {
     if (IsLoading) {
       return <p>Loading...</p>;
-    } else if (error) {
-      return <p>Error: {error}</p>;
-    } else {
+    }
+    if (!IsLoading && Tasks.length === 0) {
+      return <div>No tasks</div>;
+    }
+    if (!IsLoading && !error) {
       return <TaskList tasks={Tasks} />;
+    }
+    if (!IsLoading && error) {
+      return <div>{error}</div>;
     }
   };
   const addTaskHandler = () => {
