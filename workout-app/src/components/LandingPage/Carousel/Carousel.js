@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 import WelcomeToIcon from "../assets/WelcomeToIcon"
 import {
 	BsFillArrowLeftCircleFill,
@@ -5,18 +6,20 @@ import {
 } from "react-icons/bs"
 import "./Carousel.css"
 
-const Carousel = () => {
+const Carousel = (props) => {
+	const [isButtonClicked, setIsButtonClicked] = useState(false)
+
 	return (
 		<div className='carousel'>
 			<WelcomeToIcon />
 			<blockquote className='testimonial'>
-				<p className='testimonial-text'>
+				<p className='test-text'>
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia
 					nesciunt aliquid ex atque quibusdam. Rerum officia unde suscipit quo
 					sunt hic illo fugit."
 				</p>
-				<p className='testimonial-author'>Test Testing</p>
-				<p className='testimonial-job'>Jobing working testing pesting</p>
+				<p className='test-author'>Test Testing</p>
+				<p className='test-foot'>Jobing working testing pesting</p>
 			</blockquote>
 
 			<button className='btn btn--left'>
