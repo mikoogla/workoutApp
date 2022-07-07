@@ -6,3 +6,9 @@
   gap: 20px;
   width: 100%;
 }
+.inputError {
+  background-color: var(--red_filter);
+}
+.red {
+  color: var(--warning_color);
+}
