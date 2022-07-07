@@ -1,0 +1,11 @@
+.input {
+  padding: 10px;
+  color: var(--font_color);
+  background-color: inherit;
+  border: var(--border_default);
+  border-radius: var(--radius_default);
+}
+.input:focus,
+.input:active {
+  background-color: var(--white_filter);
+}

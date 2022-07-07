@@ -114,7 +114,6 @@ function UserLogin() {
               type="password"
               onChange={passwordInputHandler}
             />
-
             {isValid !== null && !isValid && invalidWarning}
             {isInDB !== null && !isInDB && NotExistingWarning}
           </div>

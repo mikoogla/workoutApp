@@ -1,18 +1,31 @@
 :root {
-  --closing_color: #990033;
+  /*Main palette*/
+  --accent_main: #990033;
+  --accent_yellow: #ffa726;
+  --accent_blue_1: #113557;
+  --accent_blue_2: #1a538b;
+
+  /*Basic colors*/
   --background_light: #272727;
   --background_medium: #1b1b1b;
   --background_dark: #121212;
   --font_color: white;
   --font_color_dark: black;
+
+  /*Default styles*/
+  --border_default: 1px solid var(--border_color);
+  --radius_default: 5px;
+
+  /*Default colors*/
   --border_color: white;
   --warning_color: red;
-  --warning_background: rgb(70, 39, 39);
-  --accent_main: #990033;
-  --accent_yellow: #ffa726;
-  --accent_blue_1: #113557;
-  --accent_blue_2: #1a538b;
+  --closing_color: #990033;
   --href: var(--accent_blue_2);
+
+  /*Color Filters*/
+  --white_filter: rgba(240, 248, 255, 0.055);
+  --black_filter: rgba(0, 0, 0, 0.158);
+  --red_filter: rgba(255, 0, 0, 0.027);
 }
 html {
   height: 100%;

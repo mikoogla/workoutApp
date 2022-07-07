@@ -7,6 +7,7 @@ import { DatabaseURL } from "../../private/WorkoutApp-private/Private";
 import AddMovie from "./AddMovie";
 import Counter from "../CustomHooks/Counter";
 import TaskContainer from "../CustomHooks/Tasks/TaskContainer";
+import Form from "../Forms/Form";
 
 export default function Requests() {
   const [Movies, setMovies] = useState([]);
@@ -74,6 +75,7 @@ export default function Requests() {
   };
   return (
     <div className={styles.main}>
+      <Form />
       <Counter />
       <TaskContainer />
       <AddMovie onAddMovie={addMovie} />
