@@ -10,7 +10,16 @@ export default function Form() {
   const Error = () => !Valid && Touched;
   const content = useRef("");
 
-  const handleInput = (event) => {
+  const handleChange = (event) => {
+    setValid(true);
+    setEnteredText(event.target.value);
+  };
+  const handleBlur = (event) => {
+    setTouched(true);
+    if (enteredText.trim() === "") {
+      setValid(false);
+      return;
+    }
     setEnteredText(event.target.value);
   };
 
@@ -36,6 +45,8 @@ export default function Form() {
         <Input
           ref={content}
           placeholder="type content"
+          onBlur={handleBlur}
+          onChange={handleChange}
           className={`${!Error() ? " " : styles.inputError}`}
         />
         <Warning />
