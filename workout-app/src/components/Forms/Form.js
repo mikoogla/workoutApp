@@ -12,58 +12,42 @@ function emailIsValid(email) {
 export default function Form() {
   const {
     value: text,
-    Valid: textValid,
-    handleChange: handleTextChange,
-    handleBlur: handleTextBlur,
-    Error: textError,
-  } = useInput((value) => value.length > 0);
+    isValid: textValid,
+    error: textError,
+    handleChange: handleText,
+    handleBlur: blurText,
+  } = useInput((v) => v.trim() !== "");
+
   const {
     value: email,
-    Valid: emailValid,
-    handleChange: handleEmailChange,
-    handleBlur: handleEmailBlur,
-    Error: emailError,
-  } = useInput((value) => emailIsValid(value));
+    isValid: emailValid,
+    error: emailError,
+    handleChange: handleEmail,
+    handleBlur: blurEmail,
+  } = useInput(emailIsValid);
 
-  const formValid = textValid && emailValid;
-
-  const TextWarning = (props) =>
-    textError && <div className={styles.red}>{props.children}</div>;
-
-  const EmailWarning = (props) =>
-    emailError && <div className={styles.red}>{props.children}</div>;
+  const validForm = textValid && emailValid;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!formValid) return;
-    else console.log(text, email);
+    if (!validForm) {
+      console.log("form invalid");
+      return;
+    }
+    console.log("data ready: " + text + " " + email);
   };
-
   return (
     <Card className={styles.main}>
       <form className={styles.form}>
         Content:
-        <Input
-          placeholder="type content"
-          onBlur={handleTextBlur}
-          onChange={handleTextChange}
-          className={`${textError && styles.inputError}`}
-          defaultValue={text}
-        />
-        <TextWarning>Enter something</TextWarning>
+        <Input onChange={handleText} onBlur={blurText} />
+        {textError && <p className={styles.red}>Enter something</p>}
         Mail:
-        <Input
-          type="email"
-          onBlur={handleEmailBlur}
-          onChange={handleEmailChange}
-          className={`${emailError && styles.inputError}`}
-          defaultValue={email}
-        />
-        <EmailWarning>Enter correct email</EmailWarning>
+        <Input onChange={handleEmail} onBlur={blurEmail} />
+        {emailError && <p className={styles.red}>Enter correct email</p>}
         <Button
-          className={!formValid && styles.disabled}
-          disabled={!formValid}
           onClick={handleSubmit}
+          className={!validForm && styles.disabled}
         >
           Submit
         </Button>

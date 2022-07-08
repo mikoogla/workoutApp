@@ -1,23 +1,22 @@
 import { useState } from "react";
 
 export default function useInput(validator) {
-  const [enteredValue, setenteredValue] = useState("");
+  const [enteredValue, setEnteredValue] = useState("");
   const [Touched, setTouched] = useState(false);
-  const isValid = validator(enteredValue);
-  const error = Touched && !isValid;
+  const Valid = validator(enteredValue);
+  const Error = Touched && !Valid;
 
   const handleChange = (event) => {
-    setTouched(true);
-    setenteredValue(event.target.value);
+    setEnteredValue(event.target.value);
   };
-  const handleBlur = (event) => {
+  const handleBlur = () => {
     setTouched(true);
   };
 
   return {
     value: enteredValue,
-    isValid,
-    error,
+    Error,
+    Valid,
     handleChange,
     handleBlur,
   };
