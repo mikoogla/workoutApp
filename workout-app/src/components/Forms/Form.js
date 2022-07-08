@@ -7,6 +7,10 @@ export default function Form() {
   const [enteredText, setEnteredText] = useState("");
   const [Touched, setTouched] = useState(false);
   const Valid = enteredText.trim() !== "";
+  const FormValid = () => {
+    if (Valid) return true;
+    else return false;
+  };
 
   const handleChange = (event) => {
     setEnteredText(event.target.value);
@@ -42,7 +46,13 @@ export default function Form() {
           value={enteredText}
         />
         <Warning />
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button
+          className={!FormValid() && styles.disabled}
+          disabled={!FormValid()}
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
       </form>
     </Card>
   );
