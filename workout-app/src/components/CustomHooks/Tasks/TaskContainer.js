@@ -1,42 +1,77 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Button from "../../UI/Button/Button";
 import Card from "../../UI/Card/Card";
 import Input from "../../UI/Input/Input";
 import TaskList from "./TaskList";
-import useFetch from "../hooks/useFetch";
+import useHttp from "../../hooks/useFetch";
 import { DatabaseURL } from "../../../private/WorkoutApp-private/Private";
 
 export default function TaskContainer() {
-  const { IsLoading, error, DataAdded, addData } = useFetch(
-    `${DatabaseURL}/tasks.json`
-  );
+  const { isLoading, error, sendRequest } = useHttp();
+  const [tasks, setTasks] = useState([]);
   const contentRef = useRef("");
 
+  useEffect(() => {
+    sendRequest({ url: `${DatabaseURL}/tasks.json` }, transformTasks);
+  }, [sendRequest]);
+
+  const transformTasks = async (tasksObj) => {
+    const loadedTasks = [];
+
+    for (const taskKey in tasksObj) {
+      loadedTasks.push({ id: taskKey, content: tasksObj[taskKey].content });
+    }
+
+    setTasks(loadedTasks);
+  };
+
   const Content = () => {
-    if (IsLoading) {
+    if (isLoading) {
       return <p>Loading...</p>;
     }
-    if (!IsLoading && DataAdded.length === 0) {
+    if (!isLoading && tasks.length === 0) {
       return <div>No tasks</div>;
     }
-    if (!IsLoading && !error) {
-      return <TaskList tasks={DataAdded} />;
+    if (!isLoading && !error) {
+      return <TaskList tasks={tasks} />;
     }
-    if (!IsLoading && error) {
+    if (!isLoading && error) {
       return <div>{error}</div>;
     }
   };
-  const addTaskHandler = () => {
+  const createTask = (taskText, taskData) => {
+    const generatedId = taskData.name;
+    const task = { id: generatedId, content: taskText };
+  };
+
+  const addTaskHandler = async () => {
     const content = contentRef.current.value;
     if (content) {
-      addData({ content });
-      contentRef.current.value = "";
+      sendRequest(
+        {
+          url: `${DatabaseURL}/tasks.json`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: { content: content },
+        },
+        createTask.bind(null, content)
+      );
     }
+    sendRequest({ url: `${DatabaseURL}/tasks.json` }, transformTasks);
+    contentRef.current.value = "";
   };
+
+  const addAndFetch = async () => {
+    addTaskHandler();
+    sendRequest({ url: `${DatabaseURL}/tasks.json` }, transformTasks);
+  };
+
   return (
     <Card style={{ flexDirection: "column", gap: "20px" }}>
       <Input label="task" placeholder="task" ref={contentRef} />
-      <Button onClick={addTaskHandler}>Add Task</Button>
+      <Button onClick={addAndFetch}>Add Task</Button>
       <Content />
     </Card>
   );
