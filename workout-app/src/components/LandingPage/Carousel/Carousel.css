@@ -8,20 +8,12 @@
 
 .carousel {
 	overflow: hidden;
-
-	/* width: 800px;
-	margin: 100px auto;
-	background-color: var(--gray);
-	/* padding: 32px; */
-	/* padding-left: 86px; */
-	/* padding-right: 48px; */
-	/* padding: 32px 48px 32px 86px;
-	border-radius: 8px;
-	position: relative;
-
-	display: flex;
-	align-items: center;
-	gap: 86px; */
+	width: 800px;
+	margin: 0 auto;
+	list-style: none;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-inner {
@@ -43,7 +35,7 @@
 	color: #fff;
 }
 
-.carousel-img {
+/* .carousel-img {
 	height: 200px;
 	border-radius: 8px;
 	transform: scale(1.5);
@@ -67,7 +59,7 @@
 .test-foot {
 	font-size: 12px;
 	color: var(--text-foot);
-}
+} */
 
 /* CONTROLS */
 .btn {
@@ -110,7 +102,7 @@
 	width: auto;
 }
 
-.dots {
+/* .dots {
 	position: absolute;
 	left: 50%;
 	bottom: 0;
@@ -131,4 +123,4 @@
 
 .dot--fill {
 	background-color: var(--white);
-}
+} */
