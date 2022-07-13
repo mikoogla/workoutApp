@@ -31,7 +31,7 @@
 }
 
 .indicators > button.active {
-	background-color: green;
+	background-color: #849490;
 	color: #fff;
 }
 
