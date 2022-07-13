@@ -7,19 +7,26 @@
 }
 
 .carousel {
-	width: 800px;
+	overflow: hidden;
+
+	/* width: 800px;
 	margin: 100px auto;
 	background-color: var(--gray);
 	/* padding: 32px; */
 	/* padding-left: 86px; */
 	/* padding-right: 48px; */
-	padding: 32px 48px 32px 86px;
+	/* padding: 32px 48px 32px 86px;
 	border-radius: 8px;
 	position: relative;
 
 	display: flex;
 	align-items: center;
-	gap: 86px;
+	gap: 86px; */
+}
+
+.carousel-inner {
+	white-space: nowrap;
+	transition: transform 0.3s;
 }
 
 .carousel-img {
