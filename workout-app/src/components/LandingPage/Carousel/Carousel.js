@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { Fragment, useState } from "react"
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 
 import "./Carousel.css"
 
@@ -16,29 +17,39 @@ const Carousel = ({ children }) => {
 	}
 
 	return (
-		<div className='carousel'>
-			<div
-				className='carousel-inner'
-				style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-				{React.Children.map(children, (child, index) => {
-					return React.cloneElement(child, { width: "100%" })
-				})}
-			</div>
-			<div className='indicators'>
-				<button onClick={() => updateIndex(activeIndex - 1)}> Prev </button>
-				{React.Children.map(children, (child, index) => {
-					return (
-						<button
-							className={`${index === activeIndex ? "active" : ""}`}
-							onClick={() => updateIndex(index)}>
-							{index + 1}
-						</button>
-					)
-				})}
+		<Fragment>
+			<div className='carousel'>
+				<div
+					className='carousel-inner'
+					style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+					{React.Children.map(children, (child, index) => {
+						return React.cloneElement(child, { width: "100%" })
+					})}
+				</div>
+				<div className='carousel-navigation'>
+					<button
+						className='btn-left'
+						onClick={() => updateIndex(activeIndex - 1)}>
+						<AiOutlineArrowLeft size='16px' />
+					</button>
+					<button
+						className='btn-right'
+						onClick={() => updateIndex(activeIndex + 1)}>
+						<AiOutlineArrowRight size='16px' />
+					</button>
+				</div>
 
-				<button onClick={() => updateIndex(activeIndex + 1)}> Next </button>
+				<div className='indicators'>
+					{React.Children.map(children, (child, index) => {
+						return (
+							<button
+								className={`${index === activeIndex ? "active" : ""}`}
+								onClick={() => updateIndex(index)}></button>
+						)
+					})}
+				</div>
 			</div>
-		</div>
+		</Fragment>
 	)
 }
 
