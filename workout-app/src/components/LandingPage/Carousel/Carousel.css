@@ -57,48 +57,11 @@
 }
 
 /* CONTROLS */
-.btn {
-	background-color: transparent;
-	border: none;
-	height: 40px;
-	width: 40px;
-	position: absolute;
-	cursor: pointer;
+.arrows {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: center;
-}
-
-.btn-left {
-	border-radius: 10px;
-	left: 0;
+	box-sizing: border-box;
+	padding: 0 20px;
 	cursor: pointer;
 }
-.btn-right {
-	border-radius: 10px;
-	right: 0;
-	cursor: pointer;
-}
-
-/* .dots {
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	transform: translate(-50%, 32px);
-
-	display: flex;
-	gap: 12px;
-}
-
-.dot {
-	height: 16px;
-	width: 10px;
-	background-color: var(--white);
-	border: 2px solid var(--dots);
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.dot--fill {
-	background-color: var(--white);
-} */

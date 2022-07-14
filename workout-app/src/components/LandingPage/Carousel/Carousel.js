@@ -18,6 +18,12 @@ const Carousel = ({ children }) => {
 
 	return (
 		<Fragment>
+			<span className='arrows' onClick={() => updateIndex(activeIndex - 1)}>
+				<AiOutlineArrowLeft size='20px' />
+			</span>
+			<span className='arrows' onClick={() => updateIndex(activeIndex + 1)}>
+				<AiOutlineArrowRight size='20px' />
+			</span>
 			<div className='carousel'>
 				<div
 					className='carousel-inner'
@@ -25,18 +31,6 @@ const Carousel = ({ children }) => {
 					{React.Children.map(children, (child, index) => {
 						return React.cloneElement(child, { width: "100%" })
 					})}
-				</div>
-				<div className='carousel-navigation'>
-					<button
-						className='btn-left'
-						onClick={() => updateIndex(activeIndex - 1)}>
-						<AiOutlineArrowLeft size='16px' />
-					</button>
-					<button
-						className='btn-right'
-						onClick={() => updateIndex(activeIndex + 1)}>
-						<AiOutlineArrowRight size='16px' />
-					</button>
 				</div>
 
 				<div className='indicators'>
