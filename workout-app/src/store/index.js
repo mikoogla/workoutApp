@@ -1,8 +1,8 @@
 import { createStore } from "redux";
 
-const counter_initial = { counter: 0 };
+const initial_state = { counter: 1001, isVisible: true };
 
-const counterReducer = (state = counter_initial, action) => {
+const counterReducer = (state = initial_state, action) => {
   if (action.type === "increment") {
     return {
       counter: state.counter + action.value,
@@ -13,8 +13,14 @@ const counterReducer = (state = counter_initial, action) => {
       counter: state.counter - action.value,
     };
   }
+  if (action.type === "hideAndShow") {
+    return {
+      counter: state.counter,
+      isVisible: !state.isVisible,
+    };
+  }
   return {
-    counter: 0,
+    ...initial_state,
   };
 };
 const store = createStore(counterReducer);

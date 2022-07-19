@@ -14,6 +14,7 @@ const decrement_object = (value) => ({ type: "decrement", value: value });
 //#endregion
 export default function Redux() {
   const counter = useSelector((state) => state.counter);
+  const isVisible = useSelector((state) => state.isVisible);
   const dispatch = useDispatch();
 
   const incrementHandler = (value) => {
@@ -24,12 +25,12 @@ export default function Redux() {
     dispatch(decrement_object(value));
   };
 
-  const makeanaction = (action) => {
-    console.log(action.value);
+  const visibilityHandler = () => {
+    dispatch({ type: "hideAndShow" });
   };
   return (
     <Card className={styles.main}>
-      <div>counter: {counter}</div>
+      {isVisible ? <div>counter: {counter}</div> : <div>counter: ***</div>}
       <div style={{ display: "flex", flexDirection: "row", gap: "0.5rem" }}>
         <Button onClick={() => incrementHandler(1)}>+1</Button>
         <Button onClick={() => decrementHandler(1)}>-1</Button>
@@ -42,6 +43,7 @@ export default function Redux() {
         <Button onClick={() => incrementHandler(10)}>+10</Button>
         <Button onClick={() => decrementHandler(10)}>-10</Button>
       </div>
+      <Button onClick={visibilityHandler}>{isVisible ? "Hide" : "Show"}</Button>
     </Card>
   );
 }
