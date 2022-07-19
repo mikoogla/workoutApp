@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { counterActions } from "../../store";
 //#region UI IMPORTS
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
@@ -18,11 +19,11 @@ export default function Redux() {
   const dispatch = useDispatch();
 
   const incrementHandler = (value) => {
-    dispatch(increment_object(value));
+    dispatch(counterActions.increment({ value: value })); //{type: some type ID, payload: {value: value}}
   };
 
   const decrementHandler = (value) => {
-    dispatch(decrement_object(value));
+    dispatch(counterActions.decrement({ value: value }));
   };
 
   const visibilityHandler = () => {
