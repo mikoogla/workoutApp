@@ -1,20 +1,21 @@
 import { createStore } from "redux";
 
 const counter_initial = { counter: 0 };
-const increment_object = { type: "increment" };
-const decrement_object = { type: "decrement" };
 
 const counterReducer = (state = counter_initial, action) => {
   if (action.type === "increment") {
     return {
-      counter: state.counter + 1,
+      counter: state.counter + action.value,
     };
   }
   if (action.type === "decrement") {
     return {
-      counter: state.counter - 1,
+      counter: state.counter - action.value,
     };
   }
+  return {
+    counter: 0,
+  };
 };
 const store = createStore(counterReducer);
 
@@ -24,8 +25,5 @@ const counterSubscriber = () => {
 };
 
 store.subscribe(counterSubscriber);
-
-store.dispatch(increment_object);
-store.dispatch(decrement_object);
 
 export default store;
