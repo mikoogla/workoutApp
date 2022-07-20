@@ -10,7 +10,7 @@ export default function Redux() {
   const counter = useSelector((state) => state.counter.counter);
   const isVisible = useSelector((state) => state.counter.isVisible);
   const dispatch = useDispatch();
-
+  //#region HANDLERS
   const incrementHandler = (value) => {
     dispatch(counterActions.increment({ value: value })); //{type: some type ID, payload: {value: value}}
   };
@@ -23,6 +23,7 @@ export default function Redux() {
     console.log("visibilityHandler");
     dispatch(counterActions.hideAndShow());
   };
+  //#endregion
   return (
     <Card className={styles.main}>
       {isVisible ? <div>counter: {counter}</div> : <div>counter: ***</div>}

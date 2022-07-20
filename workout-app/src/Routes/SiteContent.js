@@ -10,6 +10,7 @@ import UserFinder from "../components/class_components/UserFinder";
 import styles from "./SiteContent.module.css";
 import Requests from "../components/Requests/Requests";
 import Redux from "../components/Redux/Redux";
+import LoginV2 from "../components/Redux/Login";
 
 export default function SiteContent() {
   return (
@@ -25,7 +26,15 @@ export default function SiteContent() {
           <Route path="/styling-course" element={<Styling />} />
           <Route path="/class" element={<UserFinder />} />
           <Route path="/requests" element={<Requests />} />
-          <Route path="/redux" element={<Redux />} />
+          <Route
+            path="/redux"
+            element={
+              <>
+                <Redux />
+                <LoginV2 />
+              </>
+            }
+          />
         </Routes>
       </div>
     </Router>
