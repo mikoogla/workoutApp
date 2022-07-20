@@ -6,13 +6,6 @@ import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import styles from "./Redux.module.css";
 //#endregion
-//#region OBJECTS DECLARATIONS
-const increment_object = (value) => {
-  console.log("increment_object");
-  return { type: "increment", value: value };
-};
-const decrement_object = (value) => ({ type: "decrement", value: value });
-//#endregion
 export default function Redux() {
   const counter = useSelector((state) => state.counter);
   const isVisible = useSelector((state) => state.isVisible);
@@ -27,7 +20,8 @@ export default function Redux() {
   };
 
   const visibilityHandler = () => {
-    dispatch({ type: "hideAndShow" });
+    console.log("visibilityHandler");
+    dispatch(counterActions.hideAndShow());
   };
   return (
     <Card className={styles.main}>
