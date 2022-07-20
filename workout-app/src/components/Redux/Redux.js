@@ -7,8 +7,8 @@ import Card from "../UI/Card/Card";
 import styles from "./Redux.module.css";
 //#endregion
 export default function Redux() {
-  const counter = useSelector((state) => state.counter);
-  const isVisible = useSelector((state) => state.isVisible);
+  const counter = useSelector((state) => state.counter.counter);
+  const isVisible = useSelector((state) => state.counter.isVisible);
   const dispatch = useDispatch();
 
   const incrementHandler = (value) => {
