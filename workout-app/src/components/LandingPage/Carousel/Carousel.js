@@ -18,13 +18,15 @@ const Carousel = ({ children }) => {
 
 	return (
 		<Fragment>
-			<span className='arrows' onClick={() => updateIndex(activeIndex - 1)}>
-				<AiOutlineArrowLeft size='20px' />
-			</span>
-			<span className='arrows' onClick={() => updateIndex(activeIndex + 1)}>
-				<AiOutlineArrowRight size='20px' />
-			</span>
 			<div className='carousel'>
+				<div className='arrows'>
+					<span onClick={() => updateIndex(activeIndex - 1)}>
+						<AiOutlineArrowLeft size='20px' />
+					</span>
+					<span onClick={() => updateIndex(activeIndex + 1)}>
+						<AiOutlineArrowRight size='20px' />
+					</span>
+				</div>
 				<div
 					className='carousel-inner'
 					style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
