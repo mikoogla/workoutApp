@@ -1,36 +1,41 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
+import counterSlice from "./counterSlice";
+import authSlice from "./authSlice";
 
-const initial_counter_state = { counter: 1001, isVisible: true };
-const initial_auth_state = { isLoggedIn: false };
+//#region MOVED TO SEPERATE FILES
 
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: initial_counter_state,
-  reducers: {
-    increment: (state, action) => {
-      state.counter += action.payload.value;
-    },
-    decrement: (state, action) => {
-      state.counter -= action.payload.value;
-    },
-    hideAndShow: (state) => {
-      state.isVisible = !state.isVisible;
-    },
-  },
-});
+// const initial_counter_state = { counter: 1001, isVisible: true };
+// const initial_auth_state = { isLoggedIn: false };
 
-const authSlice = createSlice({
-  name: "auth",
-  initialState: initial_auth_state,
-  reducers: {
-    login: (state) => {
-      state.isLoggedIn = true;
-    },
-    logout: (state) => {
-      state.isLoggedIn = false;
-    },
-  },
-});
+// const counterSlice = createSlice({
+//   name: "counter",
+//   initialState: initial_counter_state,
+//   reducers: {
+//     increment: (state, action) => {
+//       state.counter += action.payload.value;
+//     },
+//     decrement: (state, action) => {
+//       state.counter -= action.payload.value;
+//     },
+//     hideAndShow: (state) => {
+//       state.isVisible = !state.isVisible;
+//     },
+//   },
+// });
+
+// const authSlice = createSlice({
+//   name: "auth",
+//   initialState: initial_auth_state,
+//   reducers: {
+//     login: (state) => {
+//       state.isLoggedIn = true;
+//     },
+//     logout: (state) => {
+//       state.isLoggedIn = false;
+//     },
+//   },
+// });
+//#endregion
 
 const store = configureStore({
   reducer: {
