@@ -1,9 +1,9 @@
 .carousel-item {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	height: 200px;
-	background-color: #5f6d69;
-	color: #fff;
-	width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #5f6d69;
+  color: #fff;
+  width: 100%;
 }

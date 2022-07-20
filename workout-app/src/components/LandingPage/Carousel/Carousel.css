@@ -1,53 +1,92 @@
 :root {
-	--white: #fff;
-	--gray: #5f6d69;
-	--dots: #849490;
-	--text-foot: #e4e7e6;
-	--text: #f1f3f3;
+  --white: #fff;
+  --gray: #5f6d69;
+  --dots: #849490;
+  --text-foot: #e4e7e6;
+  --text: #f1f3f3;
 }
 
+.parent {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTROLS */
+.arrow {
+  position: relative;
+}
+
+.btn-carousel {
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  z-index: 999;
+  position: absolute;
+  background-color: #5f6d69;
+}
+
+.btn-carousel:hover {
+  background-color: #849490;
+}
+
+.btn-carousel-left {
+  top: 47%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.btn-carousel-right {
+  top: 47%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* REST OF THE FUCKING CAROUSEL */
 .carousel {
-	position: relative;
-	overflow: hidden;
-	width: 800px;
-	margin: 0 auto;
-	list-style: none;
-	box-sizing: border-box;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  list-style: none;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .carousel-inner {
-	white-space: nowrap;
-	transition: transform 0.3s;
+  white-space: nowrap;
+  transition: transform 0.3s;
 }
 .carousel-navigation {
-	box-sizing: border-box;
-	color: none;
-	background-color: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  box-sizing: border-box;
+  color: none;
+  background-color: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .indicators {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .indicators > button {
-	margin: 5px;
-	height: 16px;
-	width: 10px;
-	background-color: var(--white);
-	border: 2px solid var(--dots);
-	border-radius: 50%;
-	cursor: pointer;
+  margin: 5px;
+  height: 16px;
+  width: 10px;
+  background-color: var(--white);
+  border: 2px solid var(--dots);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .indicators > button.active {
-	background-color: #849490;
-	color: #fff;
+  background-color: #849490;
+  color: #fff;
 }
 
 /* .carousel-img {
@@ -58,11 +97,42 @@
 }
 
 /* CONTROLS */
+/*
 .arrows {
-	position: absolute;
-	align-items: center;
-	padding: 0 20px;
-	cursor: pointer;
-	z-index: 1;
-	top: 50%;
+  /* position: absolute;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  width: 800px;
+  display: flex;
+  justify-content: space-between; 
+  position: relative;
 }
+
+.btn-carousel {
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  z-index: 999;
+  position: absolute;
+}
+
+.btn-carousel-left {
+  top: 50%;
+  left: 0;
+  transform: translate(-80%, -50%);
+}
+
+.btn-carousel-right {
+  top: 50%;
+  right: 0;
+  transform: translate(80%, -50%);
+} */
